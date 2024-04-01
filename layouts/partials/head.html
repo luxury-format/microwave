@@ -33,6 +33,7 @@
 	<link rel="microsub" href="https://micro.blog/microsub" />
 	<link rel="webmention" href="https://micro.blog/webmention" />
 	<link rel="subscribe" href="https://micro.blog/users/follow" />
+    <link rel="stylesheet" href="{{ "static/main.css" | relURL }}">
   
   {{ range .Site.Params.plugins_css }}
     <link rel="stylesheet" href="{{ . }}" />
