@@ -1,5 +1,12 @@
 /* A series of overrides for bootstrap to apply styles */
 body {
     background-color: #EDF4F2;
-    font-family: "Inter", Helvetica, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    
+}
+
+.card {
+    box-shadow: 3px 3px 20px 1px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 3px 3px 20px 1px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 3px 20px 1px rgba(0,0,0,0.41);
 }
