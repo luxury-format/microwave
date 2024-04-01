@@ -6,13 +6,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-2" id="sidebar">
-                    {{ partial "sidebar.html" }}
+                    {{ partial "sidebar.html" . }}
                 </div>
                 <div class="col" id="content">
                     {{ block "main" . }}{{ end }}
                 </div>
                 <div class="col-3" id="meta">
-                    tags and whatnot go here
+                    <p class="font-monospace">
+                        {{ . }}
+                    </p>
                 </div>
             </div>
         </div>
