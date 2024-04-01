@@ -1,6 +1,6 @@
 <div class="d-flex p-2">
     <a href="/">
-        <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Author.name }}" width="64" height="64">
+        <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Author.name }}" width="128" height="128" class="rounded-circle">
     </a>
 </div>
 
@@ -8,6 +8,7 @@
     <a href="/">
         <h5 class="card-title mb-0">{{ .Site.Title }}</h5>
     </a>
+    <h6>{{ .Site.Params.description }} </h6>
 </div>
 
 <ul class="nav justify-content-center mb-3">
