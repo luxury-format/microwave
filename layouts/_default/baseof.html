@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{ partial "head.html"}}
+    {{ partial "head.html" }}
 
     <body>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3" id="sidebar">
-                    sidebar goes here
+                    {{ partial "sidebar.html" }}
                 </div>
                 <div class="col" id="content">
                     {{ block "main" . }}{{ end }}
