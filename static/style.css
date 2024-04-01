@@ -1,0 +1,5 @@
+/* A series of overrides for bootstrap to apply styles */
+body {
+    background-color: #EDF4F2;
+    font-family: "Inter", Helvetica, sans-serif;
+}
