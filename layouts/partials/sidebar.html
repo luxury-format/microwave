@@ -3,3 +3,24 @@
         <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Author.name }}" width="64" height="64">
     </a>
 </div>
+
+<div class="d-flex justify-content-end">
+    <a href="/">
+        <h5 class="card-title mb-0">{{ .Site.Title }}</h5>
+    </a>
+</div>
+
+<ul class="nav justify-content-center mb-3">
+    {{ $url := .RelPermalink }}<!-- we will need this to determine if links are active -->
+        {{ range .Site.Menus.main }}
+        <li class="nav-item">
+              {{ if .Page.Params.redirect }}
+                <a class="nav-link {{ if eq .URL $url }}active{{ end }}"
+            href="{{ .Page.Params.redirect }}">{{ .Name }}</a>
+              {{ else }}
+                  <a class="nav-link {{ if eq .URL $url }}active{{ end }}"
+            href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+              {{ end }}
+        </li>
+        {{ end }}
+    </ul>
