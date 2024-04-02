@@ -32,7 +32,7 @@
 	{{ end }}
 </div>
 
-<ul class="nav justify-content-center mb-3">
+<ul class="nav flex-column">
     {{ $url := .RelPermalink }}<!-- we will need this to determine if links are active -->
         {{ range .Site.Menus.main }}
         <li class="nav-item">
