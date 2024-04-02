@@ -14,10 +14,10 @@
     <h6>Lorem ipsum dolor amet </h6>
 </div>
 
-<div class="p-2">
+<div class="p-2 d-flex justify-content-start flex-wrap social-icons">
     {{ with .Site.Params.twitter_username }}
     <a class="icon-link" href="https://x.com/{{ . }}">
-        <i class="fa-brands fa-x-twitter fa-xl"></i>
+        <i class="fa-brands fa-x-twitter fa-xl" style="width: 19px;"></i>
     </a>
     {{ end }}
     {{ with .Site.Params.github_username }}
