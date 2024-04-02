@@ -6,7 +6,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-2 sticky-sidebar" id="sidebar">
-                    {{ partial "sidebar.html" . }}
+                    <div class="sticky-sidebar">
+                        {{ partial "sidebar.html" . }}
+                    </div>
                 </div>
                 <div class="col" id="content">
                     {{ block "main" . }}{{ end }}
