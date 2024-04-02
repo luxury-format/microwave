@@ -14,20 +14,20 @@
     <h6>Lorem ipsum dolor amet </h6>
 </div>
 
-<div>
+<div class="p-2">
     {{ with .Site.Params.twitter_username }}
     <a class="icon-link" href="https://x.com/{{ . }}">
-        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-x-twitter fa-xl"></i>
     </a>
     {{ end }}
     {{ with .Site.Params.github_username }}
     <a class="icon-link" href="https://github.com/{{ . }}">
-        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-github fa-xl"></i>
     </a>
 	{{ end }}
 	{{ with .Site.Params.instagram_username }}
     <a class="icon-link" href="https://instagram.com/{{ . }}">
-        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-instagram fa-xl"></i>
     </a>
 	{{ end }}
 </div>
