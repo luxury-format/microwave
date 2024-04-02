@@ -10,13 +10,15 @@
                         {{ partial "sidebar.html" . }}
                     </div>
                 </div>
-                <div class="col" id="content">
+                <div class="col pt-5" id="content">
                     {{ block "main" . }}{{ end }}
                 </div>
-                <div class="col-3" id="meta">
-                    <p class="font-monospace">
-                        Categories go here
-                    </p>
+                <div class="col-3 sticky-sidebar" id="meta">
+                    <div class="sticky-sidebar">
+                        <p class="font-monospace">
+                            Categories go here
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
