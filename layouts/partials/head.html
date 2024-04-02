@@ -32,7 +32,8 @@
 	<link rel="microsub" href="https://micro.blog/microsub" />
 	<link rel="webmention" href="https://micro.blog/webmention" />
 	<link rel="subscribe" href="https://micro.blog/users/follow" />
-  <link rel="stylesheet" href="{{ "bootstrap.css" | relURL }}">
+  <link id="light" rel="stylesheet" href="{{ "bootstrap-light.css" | relURL }}">
+  <link id="dark" rel="stylesheet" href="{{ "bootstrap-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="{{ "style.css" | relURL }}">
   
   {{ range .Site.Params.plugins_css }}
