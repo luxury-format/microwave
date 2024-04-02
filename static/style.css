@@ -1,3 +1,8 @@
 .social-icons .icon-link:not(:last-child) {
     margin-right: 0.5rem;
 }
+
+.sticky-sidebar {
+    position: sticky;
+    top: 0;
+}
