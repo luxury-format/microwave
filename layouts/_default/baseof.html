@@ -5,48 +5,18 @@
     <body>
         <div class="container-fluid-lg container-xl">
             <div class="row">
-                <div class="col-3 col-xl-2 test-red sticky-sidebar" id="sidebar">
+                <div class="col-md-3 col-xl-2 sticky-sidebar" id="sidebar">
                     <div class="sticky-sidebar">
                         {{ partial "sidebar.html" . }}
                     </div>
                 </div>
-                <div class="col test-green pt-5" id="content">
+                <div class="col pt-5" id="content">
                     <div class="d-block d-md-none">
                         {{ partial "mobile-nav.html" . }}
                     </div>
-                    <!-- Extra small (xs) -->
-                    <div class="card d-block d-sm-none">
-                        <div class="card-body">
-                        <h5 class="card-title">I am xs</h5>
-                        </div>
-                    </div>
-                    <!-- Small (sm) -->
-                    <div class="card d-none d-sm-block d-md-none">
-                        <div class="card-body">
-                        <h5 class="card-title">I am sm</h5>
-                        </div>
-                    </div>
-                    <!-- Medium (md) -->
-                    <div class="card d-none d-md-block d-lg-none">
-                        <div class="card-body">
-                        <h5 class="card-title">I am md</h5>
-                        </div>
-                    </div>
-                    <!-- Large (lg) -->
-                    <div class="card d-none d-lg-block d-xl-none">
-                        <div class="card-body">
-                        <h5 class="card-title">I am lg</h5>
-                        </div>
-                    </div>
-                    <!-- Extra large (xl) -->
-                    <div class="card d-none d-xl-block">
-                        <div class="card-body">
-                        <h5 class="card-title">I am xl</h5>
-                        </div>
-                    </div>
                     {{ block "main" . }}{{ end }}
                 </div>
-                <div class="col-3 d-none d-lg-block test-blue sticky-sidebar" id="meta">
+                <div class="col-3 d-none d-lg-block sticky-sidebar" id="meta">
                     <div class="sticky-sidebar">
                         <p class="font-monospace">
                             Categories go here
