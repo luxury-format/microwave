@@ -11,3 +11,15 @@
 .nav-link.active {
     text-decoration: underline;
 }
+
+.test-red {
+    background-color: red;
+}
+
+.test-green {
+    background-color: green;
+}
+
+.test-blue {
+    background-color: blue;
+}
