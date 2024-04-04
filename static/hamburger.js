@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (hamburger && navCollapse) {
         hamburger.addEventListener("click", function() {
-            navCollapse.classList.toggle("is-active");
+            hamburger.classList.toggle("is-active");
         });
     }
 });
