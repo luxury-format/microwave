@@ -17,7 +17,9 @@
         {{ if .Title }}
 			    <h5 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
 		    {{ end }}
-        {{ .Content }}
+        <div class="post-content">
+          {{ .Content }}
+        </div>
       </div>
      </div>
       <!-- <li class="h-entry">
