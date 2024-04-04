@@ -5,17 +5,26 @@
 	{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 	{{ range $paginator.Pages  }}
      <!-- {{ .Params }} -->
-     <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-3">
+     <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
       {{ if .Params.images }}
       <div style="max-height: 250px; overflow: hidden;">
         <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
       </div>
       {{ end }}
       <div class="card-body">
-        <a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time><i class="fa-solid fa-arrow-right ms-2"></i></span></a>
-        <span class="badge text-bg-primary">Category</span>
+        <div>
+          <a href="{{ .Permalink }}" class="u-url">
+            <span class="post-meta">
+              <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </span>
+          </a>
+        </div>
+        <div>
+          <span class="badge text-bg-primary">Category</span>
+        </div>
         {{ if .Title }}
-			    <h5 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+			    <h5 class="card-title">{{ .Title }}</h5>
 		    {{ end }}
         <div class="post-content">
           {{ .Content }}
