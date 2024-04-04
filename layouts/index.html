@@ -5,7 +5,7 @@
 	{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 	{{ range $paginator.Pages  }}
      <!-- {{ .Params }} -->
-     <div class="card {{ range .Params.categories }}{{ . }}{{ end }}">
+     <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-3">
       {{ if .Params.images }}
       <div style="max-height: 250px; overflow: hidden;">
         <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
