@@ -1,22 +1,14 @@
-<div class="d-flex p-2">
-    <p class="d-inline-flex gap-1">
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Link with href
+<div class="d-flex justify-content-between p-2">
+    <div>
+        <a href="/">
+            <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Author.name }}" width="128" height="128" class="rounded-circle">
         </a>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Button with data-bs-target
+    </div>
+    <div>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#navCollapse" aria-expanded="false" aria-controls="navCollapse">
+            Toggle Navigation
         </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-        </div>
-      </div>
-
-
-    <a href="/">
-        <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Author.name }}" width="128" height="128" class="rounded-circle">
-    </a>
+    </div>
 </div>
 
 <div class="d-flex p-2">
@@ -47,17 +39,19 @@
 	{{ end }}
 </div>
 
-<ul class="nav flex-column p-2">
-    {{ $url := .RelPermalink }}<!-- we will need this to determine if links are active -->
+<div class="collapse" id="navCollapse">
+    <ul class="nav flex-column p-2">
+        {{ $url := .RelPermalink }}<!-- we will need this to determine if links are active -->
         {{ range .Site.Menus.main }}
         <li class="nav-item">
-              {{ if .Page.Params.redirect }}
+                {{ if .Page.Params.redirect }}
                 <a class="nav-link pl-0 {{ if eq .URL $url }}active{{ end }}"
             href="{{ .Page.Params.redirect }}">{{ .Name }}</a>
-              {{ else }}
-                  <a class="nav-link pl-0 {{ if eq .URL $url }}active{{ end }}"
+                {{ else }}
+                    <a class="nav-link pl-0 {{ if eq .URL $url }}active{{ end }}"
             href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
-              {{ end }}
+                {{ end }}
         </li>
         {{ end }}
     </ul>
+</div>
