@@ -4,7 +4,18 @@
   <ul class="post-list">
 	{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 	{{ range $paginator.Pages  }}
-      <li class="h-entry">
+     {{ . }}
+     <div class="card {{ range .Params.categories }}{{ . }}{{ end }}">
+      <div class="card-body">
+        <a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time><i class="fa-solid fa-arrow-right ms-2"></i></span></a>
+        <span class="badge text-bg-primary">Category</span>
+        {{ if .Title }}
+			    <h5 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+		    {{ end }}
+        {{ .Content }}
+      </div>
+     </div>
+      <!-- <li class="h-entry">
         <a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time><i class="fa-solid fa-arrow-right ms-2"></i></span></a>
         {{ if .Title }}
 			    <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
@@ -12,7 +23,7 @@
         <div class="e-content">
          	{{ .Content }}
         </div>
-      </li>
+      </li> -->
     {{ end }}
   </ul>
 {{ if .IsHome }}
