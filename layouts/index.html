@@ -6,6 +6,9 @@
 	{{ range $paginator.Pages  }}
      {{ .Params }}
      <div class="card {{ range .Params.categories }}{{ . }}{{ end }}">
+      {{ if .Params.images }}
+      <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+      {{ end }}
       <div class="card-body">
         <a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time><i class="fa-solid fa-arrow-right ms-2"></i></span></a>
         <span class="badge text-bg-primary">Category</span>
