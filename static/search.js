@@ -29,6 +29,7 @@ function runSearch(q) {
 	var results_node = document.getElementById("list_results");
 	results_node.innerHTML = "";
 	if (q.length > 0) {
+        var count = 0;
 		for (var i = 0; i < archiveResults.items.length; i++) {
 			var item = archiveResults.items[i];
 			var title_lower = item.title.toLowerCase();
@@ -59,6 +60,13 @@ function runSearch(q) {
               }
 				p_node.appendChild(text_node);
 				results_node.appendChild(p_node);
+
+                count++
+
+                // if we breach the number of results we want to display, break
+                if (count >= 5) {
+                    break;
+                }
 			}
 		}
         results_node.style.display = "block";
