@@ -15,7 +15,7 @@
     <div class="card-body">
       {{ .Params }}
       {{ if ne (len .Params.categories) 0 }}
-      <div>
+      <div class="mb-2">
         {{ range .Params.categories }}
         <span class="badge badge-primary">{{ . }}</span>
         {{ end }}
@@ -30,7 +30,7 @@
       <div>
         <a href="{{ .Permalink }}" class="u-url">
           <span class="post-meta">
-            <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan2, 2006" }}</time>
+            <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
             <i class="fa-solid fa-arrow-right ml-2"></i>
           </span>
         </a>
