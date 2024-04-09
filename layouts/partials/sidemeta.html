@@ -22,14 +22,12 @@
   {{ end }}
 </div> -->
 
-{{ $years := dict }}
 {{ $list := (where .Site.Pages "Type" "post") }}
+{{ $years := map }}
 
 {{ range $list }}
     {{ $year := .Date.Format "2006" }}
-    {{ if not (index $years $year) }}
-        {{ $years = set $years $year true }}
-    {{ end }}
+    {{ $years = merge $years (dict $year true) }}
 {{ end }}
 
 <div class="archive_years">
