@@ -44,7 +44,7 @@
   border-radius: 12px;
   position: relative;
 }
-li.timeline{
+li.timeline-line{
   padding-bottom: 1.5rem;
   border-left: 1px solid #abaaed;
   position: relative;
@@ -81,7 +81,7 @@ li.timeline{
   }
 
 }
-p{
+p.timeline-text{
   color: #4f4f4f;
       font-family: sans-serif;
   line-height: 1.5;
