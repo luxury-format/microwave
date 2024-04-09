@@ -2,7 +2,7 @@
 <h2>Archive</h2>
 
 {{ $list := (where .Site.Pages "Type" "post") }}
-<ul class="sessions">
+<ul class="sessions list-unstyled">
   {{ range $list }}
   <li class="timeline-line">
     <div class="time">
