@@ -46,7 +46,7 @@
   <h5>Archives</h5>
   <ul class="list-group">
   {{ range $index, $year := sort $years }}
-    <a href="#" class="list-group-item list-group-item-action">{{ $year }}</a>
+    <a href="/archive#{{ $year }}" class="list-group-item list-group-item-action">{{ $year }}</a>
   {{ end }}
   </ul>
 </div>
