@@ -1,7 +1,7 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
 {{ if gt (len $list) 0 }}
-<div class="archive_categories">
+<div class="archive_categories mb-4">
   <h5>Categories</h5>
   <div class="mb-2 d-flex flex-wrap">
     {{ range $list }}
@@ -34,11 +34,9 @@
 
 <div class="archive_years">
   <h5>Archives</h5>
+  <ul class="list-group">
   {{ range $index, $year := sort $years }}
-    <h5>
-      <a href="#">
-        <span class="badge badge-primary">{{ $year }}</span>
-      </a>
-    </h5>
+    <a href="#" class="list-group-item list-group-item-action">{{ $year }}</a>
   {{ end }}
+  </ul>
 </div>
