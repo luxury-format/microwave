@@ -13,7 +13,6 @@
     </div>
     {{ end }}
     <div class="card-body">
-      {{ .Params }}
       {{ if isset .Params "categories" }}
         {{ if ne (len .Params.categories) 0 }}
         <div class="mb-2 d-flex flex-wrap">
