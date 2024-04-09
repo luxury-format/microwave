@@ -14,9 +14,7 @@
                     <div class="d-block d-md-none">
                         {{ partial "mobile-nav.html" . }}
                     </div>
-                    <div id="search_results">
-                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-                    </div>
+                    {{ partial "search.html" . }}
                     {{ block "main" . }}{{ end }}
                 </div>
                 <div class="col-3 d-none d-lg-block sticky-sidebar" id="meta">
