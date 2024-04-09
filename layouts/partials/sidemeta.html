@@ -33,8 +33,12 @@
 {{ end }}
 
 <div class="archive_years">
+  <h5>Archives</h5>
   {{ range $index, $year := sort $years }}
-    {{ if ne $index 0 }}, {{ end }}
-    {{ $year }}
+    <h5>
+      <a href="#">
+        <span class="badge badge-primary">{{ $year }}</span>
+      </a>
+    </h5>
   {{ end }}
 </div>
