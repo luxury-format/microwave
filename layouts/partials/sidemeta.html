@@ -1,10 +1,10 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
 <div class="search_bar mb-4">
-  <form class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search for something..." aria-label="search" aria-describedby="button-addon2">
+  <form class="input-group mb-3" onsubmit="return false;">
+    <input type="text" class="form-control" name="q" id="input_search" placeholder="Search for something..." onchange="submitSearch(this.value.toLowerCase());" aria-label="search" aria-describedby="button-addon2">
     <div class="input-group-append">
-      <button class="btn btn-primary" type="button" id="button-addon2">
+      <button class="btn btn-primary" type="button" id="button-addon2" onclick="submitSearch(this.value.toLowerCase());">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </div>
