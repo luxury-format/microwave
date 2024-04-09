@@ -23,18 +23,18 @@
 </div> -->
 
 {{ $list := (where .Site.Pages "Type" "post") }}
-{{ $years := map }}
+{{ $years := slice }}
 
 {{ range $list }}
     {{ $year := .Date.Format "2006" }}
-    {{ $years = merge $years (dict $year true) }}
+    {{ if not (in $years $year) }}
+        {{ $years = $years | append $year }}
+    {{ end }}
 {{ end }}
 
 <div class="archive_years">
-  {{ range $key, $ := sort (dictKeys $years) }}
-    {{ if ne $key "" }}
-      {{ if ne $key (index (sort (dictKeys $years)) 0) }}, {{ end }}
-      {{ $key }}
-    {{ end }}
+  {{ range $index, $year := sort $years }}
+    {{ if ne $index 0 }}, {{ end }}
+    {{ $year }}
   {{ end }}
 </div>
