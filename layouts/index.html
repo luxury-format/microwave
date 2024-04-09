@@ -16,9 +16,9 @@
       {{ .Params }}
       {{ if isset .Params "categories" }}
         {{ if ne (len .Params.categories) 0 }}
-        <div class="mb-2">
+        <div class="mb-2 d-flex flex-wrap">
           {{ range .Params.categories }}
-          <span class="badge badge-primary">{{ . }}</span>
+          <h4><span class="badge badge-primary">{{ . }}</span></h4>
           {{ end }}   
         </div>
         {{ end }}
