@@ -1,50 +1,45 @@
 {{ define "main" }}
 
 
-  <ul class="post-list pl-0">
-	{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
-	{{ range $paginator.Pages  }}
-     <!-- {{ .Params }} -->
-     <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
-      {{ if .Params.images }}
-      <div style="max-height: 250px; overflow: hidden;">
-        <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
-      </div>
-      {{ end }}
-      <div class="card-body">
-        <div>
-          <a href="{{ .Permalink }}" class="u-url">
-            <span class="post-meta">
-              <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-              <i class="fa-solid fa-arrow-right ml-2"></i>
-            </span>
-          </a>
-        </div>
-        <div>
-          <span class="badge badge-primary">Category</span>
-        </div>
-        {{ if .Title }}
-			    <h5 class="card-title">{{ .Title }}</h5>
-		    {{ end }}
-        <div class="post-content">
-          {{ .Content }}
-        </div>
-      </div>
-     </div>
-      <!-- <li class="h-entry">
-        <a href="{{ .Permalink }}" class="u-url"><span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time><i class="fa-solid fa-arrow-right ms-2"></i></span></a>
-        {{ if .Title }}
-			    <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-		    {{ end }}
-        <div class="e-content">
-         	{{ .Content }}
-        </div>
-      </li> -->
+<ul class="post-list pl-0">
+  {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
+  default 25) }}
+  {{ range $paginator.Pages }}
+  <!-- {{ .Params }} -->
+  <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
+    {{ if .Params.images }}
+    <div style="max-height: 250px; overflow: hidden;">
+      <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
+    </div>
     {{ end }}
-  </ul>
-{{ if .IsHome }}
-  <div class="pagination justify-content-center p-0 mb-4">
-      {{ partial "pagination" . }}
+    <div class="card-body">
+      {{ .Params }}
+      <div>
+        {{ range .Params.categories }}
+        <span class="badge badge-primary">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ if .Title }}
+      <h5 class="card-title">{{ .Title }}</h5>
+      {{ end }}
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+      <div>
+        <a href="{{ .Permalink }}" class="u-url">
+          <span class="post-meta">
+            <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan2, 2006" }}</time>
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+        </a>
+      </div>
+    </div>
   </div>
+  {{ end }}
+</ul>
+{{ if .IsHome }}
+<div class="pagination justify-content-center p-0 mb-4">
+  {{ partial "pagination" . }}
+</div>
 {{ end }}
 {{ end }}
