@@ -69,9 +69,20 @@ function submitSearch(q) {
 }
 
 document.body.addEventListener('click', function(event) {
+    var inputSearch = document.getElementById('input_search');
     var searchResults = document.getElementById('parent_results');
     if (!searchResults.contains(event.target)) {
         searchResults.style.display = 'none';
+        inputSearch.value = '';
+    }
+});
+
+document.body.addEventListener('keydown', function(event) {
+    var inputSearch = document.getElementById('input_search');
+    var searchResults = document.getElementById('parent_results');
+    if (event.key === 'Escape') {
+        searchResults.style.display = 'none';
+        inputSearch.value = '';
     }
 });
 
