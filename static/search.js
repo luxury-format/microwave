@@ -72,7 +72,14 @@ function clearQuery() {
     // Remove the query parameter 'q' from the URL
     var urlParams = new URLSearchParams(window.location.search);
     urlParams.delete('q');
-    var newUrl = window.location.pathname + '?' + urlParams.toString();
+
+    // Check if there are any remaining parameters
+    if (urlParams.toString() === '') {
+        // If no remaining parameters, remove the '?'
+        var newUrl = window.location.pathname;
+    } else {
+        var newUrl = window.location.pathname + '?' + urlParams.toString();
+    }
     window.history.replaceState({}, document.title, newUrl);
 }
 
