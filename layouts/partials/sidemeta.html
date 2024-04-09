@@ -1,5 +1,14 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
+<div class="search_bar mb-4">
+  <form class="input-group">
+    <input type="text" class="form-control" placeholder="Search for something...">
+    <button class="btn btn-primary" type="button" id="button-addon2">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+</div>
+
 {{ if gt (len $list) 0 }}
 <div class="archive_categories mb-4">
   <h5>Categories</h5>
@@ -39,10 +48,4 @@
     <a href="#" class="list-group-item list-group-item-action">{{ $year }}</a>
   {{ end }}
   </ul>
-</div>
-
-<div class="search_bar">
-  <form>
-    <input type="text" class="form-control" placeholder="Search for something...">
-  </form>
 </div>
