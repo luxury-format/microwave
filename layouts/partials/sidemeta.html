@@ -15,9 +15,28 @@
 </div>
 {{ end }}
 
-{{ $list := (where .Site.Pages "Type" "post") }}
-<div class="archive_years">
+
+<!-- <div class="archive_years">
   {{ range $list }}
     {{ .Date.Format "2006" }}
+  {{ end }}
+</div> -->
+
+{{ $years := dict }}
+{{ $list := (where .Site.Pages "Type" "post") }}
+
+{{ range $list }}
+    {{ $year := .Date.Format "2006" }}
+    {{ if not (index $years $year) }}
+        {{ $years = set $years $year true }}
+    {{ end }}
+{{ end }}
+
+<div class="archive_years">
+  {{ range $key, $ := sort (dictKeys $years) }}
+    {{ if ne $key "" }}
+      {{ if ne $key (index (sort (dictKeys $years)) 0) }}, {{ end }}
+      {{ $key }}
+    {{ end }}
   {{ end }}
 </div>
