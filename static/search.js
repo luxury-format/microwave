@@ -25,61 +25,12 @@
 
 let archiveResults = {};
 
-// function runSearch(q) {
-//     var results_parent = document.getElementById("parent_results");
-// 	var results_node = document.getElementById("list_results");
-// 	results_node.innerHTML = "";
-// 	if (q.length > 0) {
-//         var count = 0;
-// 		for (var i = 0; i < archiveResults.items.length; i++) {
-// 			var item = archiveResults.items[i];
-// 			var title_lower = item.title.toLowerCase();
-// 			var text_lower = item.content_text.toLowerCase();
-// 			if (title_lower.includes(q) || text_lower.includes(q)) {
-// 				var p_node = document.createElement("p");        
-// 				var link_node = document.createElement("a");
-// 				var d = Date.parse(item.date_published);
-// 				var date_s = new Date(d).toISOString().substr(0, 10);
-// 				var date_node = document.createTextNode(date_s); 
-// 				link_node.appendChild(date_node);
-// 				link_node.href = item.url;
-//               	var title_node = null;
-// 				if (item.title.length > 0) {
-//               		title_node = document.createElement("span");
-//                   	title_node.innerHTML = ": <b>" + item.title + "</b>"
-// 					s = item.title + ": " + item.content_text;
-// 				}
-// 				var s = item.content_text;
-// 				if (s.length > 200) {
-// 					s = s.substr(0, 200) + "...";
-// 				}
-//               	var text_node = document.createElement("span");
-//              	text_node.innerHTML = ": " + s
-// 				p_node.appendChild(link_node);
-//               	if (title_node != null) {
-// 					p_node.appendChild(title_node);
-//               }
-// 				p_node.appendChild(text_node);
-// 				results_node.appendChild(p_node);
-
-//                 count++
-
-//                 // if we breach the number of results we want to display, break
-//                 if (count >= 5) {
-//                     break;
-//                 }
-// 			}
-// 		}
-//         parent_results.style.display = "block";
-// 	} 
-// }
-
 function runSearch(q) {
     var results_parent = document.getElementById("parent_results");
     var results_node = document.getElementById("list_results");
     results_node.innerHTML = "";
     if (q.length > 0) {
-        var count = 0; // Counter variable to keep track of the number of results
+        var count = 0; 
         for (var i = 0; i < archiveResults.items.length; i++) {
             var item = archiveResults.items[i];
             var title_lower = item.title.toLowerCase();
@@ -97,7 +48,7 @@ function runSearch(q) {
                 
                 results_node.appendChild(link_node);
                 
-                count++; // Increment the counter
+                count++; 
                 
                 // Break out of the loop if the desired number of results (5) is reached
                 if (count >= 5) {
@@ -116,6 +67,13 @@ function submitSearch(q) {
 	url.searchParams.set("q", q);
 	history.pushState({}, "", url);
 }
+
+document.body.addEventListener('click', function(event) {
+    var searchResults = document.getElementById('parent_results');
+    if (!searchResults.contains(event.target)) {
+        searchResults.style.display = 'none';
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
 	fetch("/archive/index.json").then(response => response.json()).then(data => {
