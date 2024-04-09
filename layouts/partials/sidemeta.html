@@ -16,5 +16,7 @@
 {{ end }}
 
 <div class="archive_years">
-  {{ $list }}
+  {{ range $list }}
+    {{ . }}
+  {{ end }}
 </div>
