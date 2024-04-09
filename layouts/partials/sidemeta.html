@@ -1,13 +1,15 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
 <div class="search_bar mb-4">
-  <form class="input-group">
-    <input type="text" class="form-control" placeholder="Search for something...">
-    <button class="btn btn-primary" type="button" id="button-addon2">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
+  <form class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search for something..." aria-label="search" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="button" id="button-addon2">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
   </form>
-</div>
+  </div>
 
 {{ if gt (len $list) 0 }}
 <div class="archive_categories mb-4">
