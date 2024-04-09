@@ -21,23 +21,24 @@
 <h2 class="d-none d-md-block">Archive</h2>
 
 {{ $list := (where .Site.Pages "Type" "post") }}
-<ul class="sessions list-unstyled">
-  {{ $currentYear := "" }}
-  {{ range $list }}
-    {{ $year := .Date.Format "2006" }}
-    {{ if ne $year $currentYear }}
-      {{ $currentYear = $year }}
-      <h3>{{ $year }}</h3>
-    {{ end }}
-    <li class="timeline-line">
-      <div class="time">
-        <a href="{{ .Permalink }}" class="u-url">
-          <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-        </a>
-      </div>
-      <span class="p-summary"></span>
-      <p class="timeline-text">{{ if .Title }}<b>{{.Title}}</b> {{ end }}{{ .Summary | truncate 100 }}</p>
-    </li>
+{{ $currentYear := "" }}
+{{ range $list }}
+  {{ $year := .Date.Format "2006" }}
+  {{ if ne $year $currentYear }}
+    {{ if ne $currentYear "" }}</ul>{{ end }}
+    {{ $currentYear = $year }}
+    <h3>{{ $year }}</h3>
+    <ul class="sessions list-unstyled">
   {{ end }}
-</ul>
+  <li class="timeline-line">
+    <div class="time">
+      <a href="{{ .Permalink }}" class="u-url">
+        <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </a>
+    </div>
+    <span class="p-summary"></span>
+    <p class="timeline-text">{{ if .Title }}<b>{{.Title}}</b> {{ end }}{{ .Summary | truncate 100 }}</p>
+  </li>
+{{ end }}
+</ul> <!-- Close the last ul if there were any posts -->
 {{ end }}
