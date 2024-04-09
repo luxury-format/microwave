@@ -1,11 +1,11 @@
 {{ define "main" }}
 
 <ul class="post-list pl-0">
-  {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
+  {{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
   default 25) }}
   {{ range $paginator.Pages }}
   <!-- {{ .Params }} -->
-  <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
+  <div class="card mb-5">
     {{ if .Params.images }}
     <div style="max-height: 250px; overflow: hidden;">
       <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
@@ -30,9 +30,9 @@
   </div>
   {{ end }}
 </ul>
-{{ if .IsHome }}
+<!-- {{ if .IsHome }}
 <div class="pagination justify-content-center p-0 mb-4">
   {{ partial "pagination" . }}
 </div>
-{{ end }}
+{{ end }} -->
 {{ end }}
