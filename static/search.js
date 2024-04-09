@@ -68,12 +68,21 @@ function submitSearch(q) {
 	history.pushState({}, "", url);
 }
 
+function clearQuery() {
+    // Remove the query parameter 'q' from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    urlParams.delete('q');
+    var newUrl = window.location.pathname + '?' + urlParams.toString();
+    window.history.replaceState({}, document.title, newUrl);
+}
+
 document.body.addEventListener('click', function(event) {
     var inputSearch = document.getElementById('input_search');
     var searchResults = document.getElementById('parent_results');
     if (!searchResults.contains(event.target)) {
         searchResults.style.display = 'none';
         inputSearch.value = '';
+        clearQuery()
     }
 });
 
@@ -83,6 +92,7 @@ document.body.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         searchResults.style.display = 'none';
         inputSearch.value = '';
+        clearQuery()
     }
 });
 
