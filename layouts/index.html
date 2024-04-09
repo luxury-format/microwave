@@ -14,11 +14,13 @@
     {{ end }}
     <div class="card-body">
       {{ .Params }}
+      {{ if ne (len .Params.categories) 0 }}
       <div>
         {{ range .Params.categories }}
         <span class="badge badge-primary">{{ . }}</span>
         {{ end }}
       </div>
+      {{ end }}
       {{ if .Title }}
       <h5 class="card-title">{{ .Title }}</h5>
       {{ end }}
