@@ -19,3 +19,7 @@
 .mb-2.d-flex.flex-wrap > h4:not(:last-child) {
     margin-right: 0.5rem; 
 }
+
+.mb-2.d-flex.flex-wrap > h5:not(:last-child) {
+    margin-right: 0.5rem; 
+}

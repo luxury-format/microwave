@@ -1,14 +1,14 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 {{ if gt (len $list) 0 }}
 <div class="archive_categories">
-  <h3>Categories</h3>
+  <h5>Categories</h5>
   <div class="mb-2 d-flex flex-wrap">
     {{ range $list }}
-    <h4>
+    <h5>
       <a href="{{ .Permalink }}">
         <span class="badge badge-primary">{{ .Title }}</span>
       </a>
-    </h4>
+    </h5>
     {{ end }}
   </div>
 </div>
