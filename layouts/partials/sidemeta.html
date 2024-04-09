@@ -1,7 +1,7 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
-<div class="search_bar mb-4">
-  <form class="input-group mb-3" onsubmit="return false;">
+<div class="search_bar">
+  <form class="input-group" onsubmit="return false;">
     <input type="text" class="form-control" name="q" id="input_search" placeholder="Search for something..." onchange="submitSearch(this.value.toLowerCase());" aria-label="search" aria-describedby="button-addon2">
     <div class="input-group-append">
       <button class="btn btn-primary" type="button" id="button-addon2" onclick="submitSearch(this.value.toLowerCase());">
@@ -11,10 +11,10 @@
   </form>
 </div>
 
-<div id="list_results" class="position-absolute start-0 mt-1" style="display: none; background-color: white; border: 1px solid #ced4da; border-top: none; border-radius: 0 0 0.5rem 0.5rem; width: 100%;"></div>
+<div id="list_results" class="position-absolute start-0" style="display: none; background-color: white; border: 1px solid #ced4da; border-top: none; border-radius: 0 0 0.5rem 0.5rem; width: 100%; z-index:1000;"></div>
 
 {{ if gt (len $list) 0 }}
-<div class="archive_categories mb-4">
+<div class="archive_categories mt-4 mb-4">
   <h5>Categories</h5>
   <div class="mb-2 d-flex flex-wrap">
     {{ range $list }}
@@ -27,13 +27,6 @@
   </div>
 </div>
 {{ end }}
-
-
-<!-- <div class="archive_years">
-  {{ range $list }}
-    {{ .Date.Format "2006" }}
-  {{ end }}
-</div> -->
 
 {{ $list := (where .Site.Pages "Type" "post") }}
 {{ $years := slice }}
