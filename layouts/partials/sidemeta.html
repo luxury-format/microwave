@@ -18,6 +18,6 @@
 {{ $list := (where .Site.Pages "Type" "post") }}
 <div class="archive_years">
   {{ range $list }}
-    {{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006" }}
+    {{ .Date.Format "2006" }}
   {{ end }}
 </div>
