@@ -7,10 +7,14 @@
     {{ if .Title }}
     <h3 class="card-title">{{ .Title }}</h3>
     {{ end }}
-    <div>
+    <div class="mb-3">
       <span class="post-meta">
         <i class="fa-regular fa-calendar"></i>
         <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </span>
+      <span class="reading-time">
+        <i class="fa-solid fa-stopwatch"></i>
+        {{ .ReadingTime }}
       </span>
     </div>
     <div class="single-post-content">
