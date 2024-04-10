@@ -1,3 +1,12 @@
 {{ define "main" }}
-<h1>soon to be things like about page etc</h1>
+<div class="card mb-5">
+    <div class="card-body">
+      {{ if .Title }}
+      <h5 class="card-title">{{ .Title }}</h5>
+      {{ end }}
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
 {{ end }}
