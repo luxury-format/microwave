@@ -16,7 +16,7 @@
       <h5 class="card-title">{{ .Title }}</h5>
       {{ end }}
       <div class="post-content">
-        {{ .Content | truncate 100 }}
+        {{ .Content }}
       </div>
       <div>
         <a href="{{ .Permalink }}" class="u-url">
