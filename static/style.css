@@ -16,6 +16,11 @@
     display: none !important;
 }
 
+.single-post-content img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .mb-2.d-flex.flex-wrap > h4:not(:last-child) {
     margin-right: 0.5rem; 
 }
