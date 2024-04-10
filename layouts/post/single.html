@@ -15,12 +15,11 @@
       <span class="reading-time">
         <i class="fa-solid fa-stopwatch"></i>
         {{ $readingTime := .ReadingTime }}
-        {{ $minutes := div $readingTime.Seconds 60 | printf "%.0f" }}
 
-        {{ if eq $minutes 1 }}
-            {{ $minutes }} minute
+        {{ if eq $readingTime 1 }}
+            {{ $readingTime }} minute
         {{ else }}
-            {{ $minutes }} minutes
+            {{ $readingTime }} minutes
         {{ end }}
       </span>
     </div>
