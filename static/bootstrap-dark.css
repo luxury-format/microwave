@@ -338,7 +338,7 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  border-top: 1px solid rgba(255, 255, 255, 0.5); }
 
 small,
 .small {
@@ -425,7 +425,7 @@ kbd {
 pre {
   display: block;
   font-size: 87.5%;
-  color: #212529; }
+  color: #adb5bd; }
   pre code {
     font-size: inherit;
     color: inherit;
@@ -452,7 +452,7 @@ pre {
       max-width: 960px; } }
   @media (min-width: 1200px) {
     .container {
-      max-width: 1540px; } }
+      max-width: 1140px; } }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
   width: 100%;
@@ -475,7 +475,7 @@ pre {
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1540px; } }
+    max-width: 1140px; } }
 
 .row {
   display: flex;
