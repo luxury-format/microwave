@@ -96,4 +96,9 @@ p.timeline-text{
 blockquote {
   margin-bottom: 1rem;
   font-size: 1.25rem;
+  border-left: 3px solid;
+}
+
+blockquote p {
+  margin-left: 0.5rem;
 }
