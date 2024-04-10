@@ -14,7 +14,14 @@
       </span>
       <span class="reading-time">
         <i class="fa-solid fa-stopwatch"></i>
-        {{ .ReadingTime }}
+        {{ $readingTime := .ReadingTime }}
+        {{ $minutes := div $readingTime "1m" | printf "%.0f" }}
+
+        {{ if eq $minutes 1 }}
+            {{ $minutes }} minute
+        {{ else }}
+            {{ $minutes }} minutes
+        {{ end }}
       </span>
     </div>
     <div class="single-post-content">
