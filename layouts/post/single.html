@@ -1,4 +1,22 @@
 {{ define "main" }}
-<h1>Soon to be single posts!</h1>
+<div class="card mb-5">
+  <!-- {{ if .Params.images }}
+    <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
+  {{ end }} -->
+  <div class="card-body">
+    {{ if .Title }}
+    <h5 class="card-title">{{ .Title }}</h5>
+    {{ end }}
+    <div class="single-post-content">
+      {{ .Content }}
+    </div>
+    <div>
+      <span class="post-meta">
+        <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <i class="fa-solid fa-arrow-right ml-2"></i>
+      </span>
+    </div>
+  </div>
+</div>
 
 {{ end }}
