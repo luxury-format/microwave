@@ -19,6 +19,7 @@
 .single-post-content img {
   width: 100% !important;
   height: 100% !important;
+  margin-bottom: 0.5rem;
 }
 
 .mb-2.d-flex.flex-wrap > h4:not(:last-child) {
@@ -90,4 +91,9 @@ p.timeline-text{
   @include mobile-only{
     font-size: .9rem;
   }
+}
+
+blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
