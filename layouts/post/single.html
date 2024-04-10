@@ -5,17 +5,18 @@
   {{ end }} -->
   <div class="card-body">
     {{ if .Title }}
-    <h5 class="card-title">{{ .Title }}</h5>
+    <h3 class="card-title">{{ .Title }}</h3>
     {{ end }}
+    <div>
+      <span class="post-meta">
+        <i class="fa-regular fa-calendar"></i>
+        <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </span>
+    </div>
     <div class="single-post-content">
       {{ .Content }}
     </div>
-    <div>
-      <span class="post-meta">
-        <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-        <i class="fa-solid fa-arrow-right ml-2"></i>
-      </span>
-    </div>
+    
   </div>
 </div>
 
