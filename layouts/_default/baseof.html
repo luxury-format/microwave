@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{ partial "head.html" }}
-
-    <body>
-        <div class="container-fluid-lg container-xl">
-            <div class="row">
-                <div class="d-none d-md-block col-md-3 col-xl-2 sticky-sidebar mt-5" id="sidebar">
-                    <div class="sticky-sidebar">
-                        {{ partial "sidebar.html" . }}
-                    </div>
-                </div>
-                <div class="col pt-5" id="content">
-                    <div class="d-block d-md-none">
-                        {{ partial "mobile-nav.html" . }}
-                    </div>
-                    <!-- Lightbox container -->
-                    <div id="lightbox">
-                        <div class="lightbox-container">
-                          <img id="lightbox-image" src="" alt="">
-                          <button id="prev-btn">&lt;</button>
-                          <button id="next-btn">&gt;</button>
-                        </div>
-                      </div>
-                    {{ partial "search.html" . }}
-                    {{ block "main" . }}{{ end }}
-                </div>
-                <div class="col-3 d-none d-lg-block sticky-sidebar" id="meta">
-                    <div class="sticky-sidebar">
-                        <p class="font-monospace">
-                            {{ partial "sidemeta.html" . }}
-                        </p>
-                    </div>
-                </div>
-            </div>
+{{ partial "head.html" }}
+<body>
+  <div class="container-fluid-lg container-xl">
+    <div class="row">
+      <div class="d-none d-md-block col-md-3 col-xl-2 sticky-sidebar mt-5" id="sidebar">
+        <div class="sticky-sidebar">
+          {{ partial "sidebar.html" . }}
         </div>
-        {{ range .Site.Params.plugins_js }}
-            <script src="{{ . }}"></script>
-        {{ end }}
-        <script src="{{ "search.js" | relURL }}"></script>
-        <script src="{{ "archive.js" | relURL }}"></script>
-        <script src="{{ "hamburger.js" | relURL }}"></script>
-        <script src="{{ "lightbox.js" | relURL }}"></script>
-        <script src="https://kit.fontawesome.com/f9bfe062c6.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+      </div>
+      <div class="col pt-5" id="content">
+        <div class="d-block d-md-none">
+          {{ partial "mobile-nav.html" . }}
+        </div>
+        <!-- Lightbox container -->
+        <div id="lightbox">
+          <div class="lightbox-container">
+            <button id="prev-btn" class="btn btn-primary">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <img id="lightbox-image" src="" alt="">
+            <button id="next-btn" class="btn btn-primary">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        {{ partial "search.html" . }}
+        {{ block "main" . }}{{ end }}
+      </div>
+      <div class="col-3 d-none d-lg-block sticky-sidebar" id="meta">
+        <div class="sticky-sidebar">
+          <p class="font-monospace">
+            {{ partial "sidemeta.html" . }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ range .Site.Params.plugins_js }}
+  <script src="{{ . }}"></script>
+  {{ end }}
+  <script src="{{ "search.js" | relURL }}"></script>
+  <script src="{{ "archive.js" | relURL }}"></script>
+  <script src="{{ "hamburger.js" | relURL }}"></script>
+  <script src="{{ "lightbox.js" | relURL }}"></script>
+  <script src="https://kit.fontawesome.com/f9bfe062c6.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
