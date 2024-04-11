@@ -5,7 +5,13 @@ var images = [];
 function openLightbox(index) {
   var lightbox = document.getElementById('lightbox');
   lightbox.style.display = 'flex';
+  toggleNavButtons(images.length > 1);
   showImage(index);
+}
+
+function toggleNavButtons(visible) {
+  prevBtn.style.display = visible ? 'block' : 'none';
+  nextBtn.style.display = visible ? 'block' : 'none';
 }
 
 // Function to close the lightbox
@@ -38,19 +44,28 @@ for (var i = 0; i < imgs.length; i++) {
 var prevBtn = document.getElementById('prev-btn');
 var nextBtn = document.getElementById('next-btn');
 prevBtn.addEventListener('click', function() {
-  if (currentImageIndex > 0) {
-    showImage(currentImageIndex - 1);
-  }
+//   if (currentImageIndex > 0) {
+//     showImage(currentImageIndex - 1);
+//   }
+    showImage((currentImageIndex - 1 + images.length) % images.length);
 });
 nextBtn.addEventListener('click', function() {
-  if (currentImageIndex < images.length - 1) {
-    showImage(currentImageIndex + 1);
-  }
+    showImage((currentImageIndex + 1) % images.length);
+//   if (currentImageIndex < images.length - 1) {
+//     showImage(currentImageIndex + 1);
+//   }
 });
 
 // Close lightbox when clicking outside the image
 var lightbox = document.getElementById('lightbox');
 lightbox.addEventListener('click', function(event) {
+  if (event.target === this) {
+    closeLightbox();
+  }
+});
+
+var lightboxContainer = document.getElementById('lightbox-container');
+lightboxContainer.addEventListener('click', function(event) {
   if (event.target === this) {
     closeLightbox();
   }
