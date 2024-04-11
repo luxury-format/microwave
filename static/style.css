@@ -114,14 +114,18 @@ blockquote p {
   z-index: 9999;
 }
 
-#lightbox img {
-  display: block;
-  margin: 0 auto;
-  max-width: 90%;
-  max-height: 90%;
-  margin-top: 5%;
+.lightbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
-#lightbox img:hover {
+.lightbox-container img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-container img:hover {
   cursor: pointer;
 }
