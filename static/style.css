@@ -102,3 +102,26 @@ blockquote {
 blockquote p {
   margin-left: 0.5rem;
 }
+
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+#lightbox img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 5%;
+}
+
+#lightbox img:hover {
+  cursor: pointer;
+}
