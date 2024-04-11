@@ -30,13 +30,13 @@
             <script src="{{ . }}"></script>
         {{ end }}
         <script>
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.getElementById('light').disabled = true; // Disable light theme
-                document.getElementById('dark').disabled = false; // Enable dark theme
-            } else {
-                document.getElementById('dark').disable = true;
-                document.getElementById('light').disabled = false;
-            }
+            // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            //     document.getElementById('light').disabled = true; // Disable light theme
+            //     document.getElementById('dark').disabled = false; // Enable dark theme
+            // } else {
+            //     document.getElementById('dark').disable = true;
+            //     document.getElementById('light').disabled = false;
+            // }
         </script>
         <script src="{{ "search.js" | relURL }}"></script>
         <script src="{{ "archive.js" | relURL }}"></script>
