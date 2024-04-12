@@ -29,16 +29,18 @@ function showImage(index) {
 
 // Add click event listeners to all images
 var gallery = document.getElementById('my-gallery');
-var imgs = gallery.getElementsByTagName('img');
-for (var i = 0; i < imgs.length; i++) {
-  images.push({
-    src: imgs[i].src,
-    alt: imgs[i].alt
-  });
-  imgs[i].addEventListener('click', function() {
-    openLightbox(Array.from(imgs).indexOf(this));
-  });
-}
+if (gallery) {
+  var imgs = gallery.getElementsByTagName('img');
+  for (var i = 0; i < imgs.length; i++) {
+    images.push({
+      src: imgs[i].src,
+      alt: imgs[i].alt
+    });
+    imgs[i].addEventListener('click', function() {
+      openLightbox(Array.from(imgs).indexOf(this));
+    });
+  }
+} 
 
 // Add click event listeners to navigation buttons
 var prevBtn = document.getElementById('prev-btn');

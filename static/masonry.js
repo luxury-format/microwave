@@ -2,14 +2,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     var grid = document.querySelector('.grid');
 
+    console.log("I am alive")
+
     imagesLoaded(grid), function(instance) {
         console.log("images are loaded");
     }
 
     imagesLoaded(grid, function() {
-    var msnry = new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: 200
-    });
+        var msnry = new Masonry(grid, {
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
     });
 });
