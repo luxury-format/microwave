@@ -1,6 +1,9 @@
 {{ define "main" }}
 
 <!-- <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'> -->
+<div class="spinner-border text-primary" id="photo-spinner" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
 <div class="grid">
   {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
 	{{- $len := (len $list) -}}
