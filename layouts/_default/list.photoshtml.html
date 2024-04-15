@@ -2,7 +2,7 @@
 
 <div class="spinner-border text-primary" id="photo-spinner" role="status">
 </div>
-<div class="grid">
+<div class="grid" style="display: none;">
   {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
 	{{- $len := (len $list) -}}
 	{{ range $index, $value := $list }}
