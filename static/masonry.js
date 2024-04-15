@@ -5,6 +5,6 @@ imagesLoaded( document.querySelector('.grid'), function( instance ) {
               });
     var spinner = document.getElementById('photo-spinner');
     spinner.style.display = 'none';
-    var photogrid = document.getElementsByClassName('grid');
+    var photogrid = document.getElementbyId('photo-grid');
     photogrid.style.display = 'block';
   });
