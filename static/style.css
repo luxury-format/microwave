@@ -130,3 +130,5 @@ blockquote p {
 .lightbox-container img:hover {
   cursor: pointer;
 }
+
+.grid-item { width: 200px; }
