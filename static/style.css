@@ -51,7 +51,7 @@
 }
 li.timeline-line{
   padding-bottom: 1.5rem;
-  border-left: 1px solid #375E97;
+  border-left: 1px solid #24465a;
   position: relative;
   padding-left: 20px;
   margin-left: 10px;
@@ -64,9 +64,9 @@ li.timeline-line{
     width: 15px;
     height: 15px;
     background: white;
-    border: 1px solid #4e5ed3;
-    box-shadow: 3px 3px 0px #375E97;
-    box-shadow: 3px 3px 0px #375E97;
+    border: 1px solid #24465a;
+    box-shadow: 3px 3px 0px #24465a;
+    box-shadow: 3px 3px 0px #24465a;
     border-radius: 50%;
     position: absolute;
     left: -10px;
