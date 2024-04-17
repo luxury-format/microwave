@@ -32,10 +32,7 @@
 
 
   {{ if .Site.Params.include_conversation }}
-    <div class="card">
-      <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
-	  </div>	
+    <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
   {{ end }}
-		<hr class="my-3">
   		
 {{ end }}
