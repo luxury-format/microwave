@@ -1,6 +1,7 @@
 {
     "params": {
         "showTagline": true,
+        "paginateReplies": true,
         "tagline": "Modern art makes me want to rock out",
         "letterboxdUsername": "",
         "untappdUsername": "",
