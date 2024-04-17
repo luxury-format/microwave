@@ -4,14 +4,14 @@
     {{ if $pag.HasPrev }}
     <li class="nav-item me-3">
         <a class="text-center nav-link boxy p-3" aria-current="page" href="{{ $pag.Prev.URL }}">
-            <i class="bi bi-arrow-left"></i>Newer
+            <i class="fa-solid fa-arrow-left mr-2"></i>Newer
         </a>
     </li>
     {{ end }}
     {{ if $pag.HasNext }}
     <li class="nav-item">
         <a class="text-center nav-link boxy p-3" aria-current="page" href="{{ $pag.Next.URL }}">
-            Older<i class="bi bi-arrow-right"></i>
+            Older<i class="fa-solid fa-arrow-left ml-2"></i>
         </a>
     </li>
     {{ end }}
