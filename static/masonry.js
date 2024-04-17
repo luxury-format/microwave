@@ -7,6 +7,7 @@ imagesLoaded( document.querySelector('.grid'), function( instance ) {
     photogrid.style.display = 'block';
     var msnry = new Masonry('.grid', {
                   itemSelector: '.grid-item',
+                  gutter: 10
               });
     
   });
