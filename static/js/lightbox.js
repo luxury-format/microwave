@@ -46,16 +46,10 @@ if (gallery) {
 var prevBtn = document.getElementById('prev-btn');
 var nextBtn = document.getElementById('next-btn');
 prevBtn.addEventListener('click', function() {
-//   if (currentImageIndex > 0) {
-//     showImage(currentImageIndex - 1);
-//   }
     showImage((currentImageIndex - 1 + images.length) % images.length);
 });
 nextBtn.addEventListener('click', function() {
     showImage((currentImageIndex + 1) % images.length);
-//   if (currentImageIndex < images.length - 1) {
-//     showImage(currentImageIndex + 1);
-//   }
 });
 
 // Close lightbox when clicking outside the image

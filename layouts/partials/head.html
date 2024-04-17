@@ -35,12 +35,12 @@
 	<link rel="microsub" href="https://micro.blog/microsub" />
 	<link rel="webmention" href="https://micro.blog/webmention" />
 	<link rel="subscribe" href="https://micro.blog/users/follow" />
-  <link id="light" rel="stylesheet" href="{{ "bootstrap-light.css" | relURL }}">
-  <link id="dark" rel="stylesheet" href="{{ "bootstrap-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" href="{{ "style.css" | relURL }}">
-  <link rel="stylesheet" href="{{ "hamburgers.css" | relURL }}">
-  <link rel="stylesheet" href="{{ "loader.css" | relURL }}">
-  <link rel="stylesheet" href="{{ "photoswipe.css" | relURL }}">
+  <link id="light" rel="stylesheet" href="{{ "css/bootstrap-light.css" | relURL }}">
+  <link id="dark" rel="stylesheet" href="{{ "css/bootstrap-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/hamburgers.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/loader.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/photoswipe.css" | relURL }}">
   
   {{ range .Site.Params.plugins_css }}
     <link rel="stylesheet" href="{{ . }}" />
