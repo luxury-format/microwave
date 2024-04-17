@@ -131,4 +131,7 @@ blockquote p {
   cursor: pointer;
 }
 
-.grid-item { width: 48%; }
+.grid-item { 
+  width: 48%;
+  margin-bottom: 10px;
+}
