@@ -21,7 +21,7 @@ Mobile hamburger menu comes from Jonathan Suh here: https://github.com/jonsuh/ha
 * Custom lightbox for photos in posts (supports multiple!)
 
 ## Customising
-I've included SASS variables for the light and dark modes of the theme. Feel free to hack away at those and create alternative `bootstrap-dark` and `bootstrap-light` files.
+I've included SASS variables for the light and dark modes of the theme. Feel free to hack away at those and create alternative `bootstrap-dark` and `bootstrap-light` files. When you change card background colours, you'll want to update the values of the reply div backgrounds in `static/css/style.css` - sorry about that.
 
 #### Changing your tagline
 Edit the config.json of your theme and change the value of `tagline`
