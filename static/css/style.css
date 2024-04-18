@@ -150,6 +150,12 @@ blockquote p {
   margin-bottom: 3rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  .microblog_conversation {
+    background-color: #323542;
+  }
+}
+
 .microblog_post:not(:first-child) {
   margin-top: 1rem;
   border-top: 1px solid rgb(0,0,0,0.1);
