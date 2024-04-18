@@ -163,4 +163,14 @@ blockquote p {
 
 .microblog_avatar {
   border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.microblog_text {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.microblog_text p {
+  margin-bottom: 0 !important;
 }
