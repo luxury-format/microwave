@@ -1,8 +1,8 @@
 {{ define "main" }}
-
+{{ $books := .Site.Data.bookshelves.currentlyreading }}
 <div class="d-block d-lg-none">
   <div class="row">
-    <div class="col-12">
+    <div class="col">
       <h6>Listening</h6>
       <div class="pl-0 card">
         <div class="album-info">
@@ -14,17 +14,19 @@
         </div>
       </div>
     </div>
+    {{ if gt (len $books) 0 }}
     <div class="col-12 mt-3">
       <h6>Reading</h6>
       <div class="pl-0 card">
         <div class="album-info">
-          <img src="https://placehold.co/400x600" alt="Album Art" class="album-art">
+          <img src="{{ index $books 0 "cover_url" }}" alt="Album Art" class="album-art">
           <div>
-            <h6>Title of the Book</h6>
-            <p class="text-muted mb-0">Author Name</p>
+            <h6>{{ index $books 0 "title" }}</h6>
+            <p class="text-muted mb-0">{{ index $books 0 "author" }}</p>
           </div>
         </div>
       </div>
+    {{ end }}      
     </div>
   </div>
 </div>

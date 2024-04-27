@@ -22,16 +22,14 @@
 
 {{ if gt (len $books) 0 }}
   <h5 class="mt-4">Reading</h5>
-  {{ range $index, $book := $books }}
     <div class="card mb-4">
       <div class="card-body">
-        <a href="https://micro.blog/books/{{ $book.isbn }}">
-          <p class="card-text mb-1">{{ $book.title }}</p>
-          <p class="card-text"><small class="text-body-secondary">{{ $book.author }}</small></p>
+        <a href="https://micro.blog/books/{{ index $books 0 "isbn" }}">
+          <p class="card-text mb-1">{{  index $books 0 "title" }}</p>
+          <p class="card-text"><small class="text-body-secondary">{{ index $books 0 "author" }}</small></p>
         </a>
       </div>
     </div>
-  {{ end }}
 {{ end }}
 
 {{ if gt (len $list) 0 }}
