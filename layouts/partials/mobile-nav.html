@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between p-2">
+<div class="d-flex justify-content-between py-2">
     <div>
         <a href="/">
             <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Author.name }}" width="128" height="128" class="rounded-circle">
@@ -13,19 +13,19 @@
     </div>
 </div>
 
-<div class="d-flex p-2">
+<div class="d-flex py-2">
     <a href="/">
         <h5 class="card-title mb-0">{{ .Site.Title }}</h5>
     </a>
 </div>
 
 {{- if .Site.Params.showTagline -}}
-<div class="p-2">
+<div class="py-2">
     <h6 class="mb-0">{{ .Site.Params.tagline }}</h6>
 </div>
 {{- end -}}
 
-<div class="p-2 mb-2 d-flex justify-content-start flex-wrap social-icons">
+<div class="py-2 mb-2 d-flex justify-content-start flex-wrap social-icons">
     {{ partial "social-icons.html" . }}
 </div>
 
