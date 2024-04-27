@@ -1,6 +1,23 @@
 {{ define "main" }}
 
+<div class="d-block d-md-none">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container mt-4">
+        <div class="album-info">
+          <img src="https://placehold.co/400" alt="Album Art" class="album-art">
+          <div>
+            <h5>Title of the Track</h5>
+            <p class="text-muted">Artist Name</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
 
+    </div>
+  </div>
+</div>
 <ul class="post-list pl-0">
   {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
   default 25) }}
