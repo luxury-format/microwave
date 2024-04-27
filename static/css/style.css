@@ -180,3 +180,8 @@ blockquote p {
 .microblog_text p {
   margin-bottom: 0 !important;
 }
+
+.carousel-item {
+  height: 10rem;
+  background-color: grey;
+}
