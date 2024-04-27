@@ -33,7 +33,7 @@
     </div>
   {{ else }}
      <!-- Render carousel -->
-     <div id="bookCarousel" class="carousel slide" data-ride="carousel">
+     <div id="bookCarousel" class="carousel slide">
       <ol class="carousel-indicators">
           {{ range $index, $book := $books }}
               <li data-target="#bookCarousel" data-slide-to="{{ $index }}" {{ if eq $index 0 }}class="active"{{ end }}></li>
