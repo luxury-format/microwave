@@ -6,6 +6,8 @@
         "letterboxdUsername": "",
         "untappdUsername": "",
         "lastfmUsername": "",
-        "blueskyUsername": ""
+        "blueskyUsername": "",
+        "categoriesOnPosts": true,
+        "categoriesInSidebar": true
     }
 }

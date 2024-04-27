@@ -32,6 +32,7 @@
     </div>
 {{ end }}
 
+{{- if .Site.Params.categoriesInSidebar -}}
 {{ if gt (len $list) 0 }}
 <div class="archive_categories mt-4 mb-4">
   <h5>Categories</h5>
@@ -45,6 +46,7 @@
     {{ end }}
   </div>
 </div>
+{{ end }}
 {{ end }}
 
 {{ $list := (where .Site.Pages "Type" "post") }}
