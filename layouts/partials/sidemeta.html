@@ -17,6 +17,18 @@
   </div>
 </div>
 
+{{ range .Site.Data.bookshelves.currentlyreading }}
+<h5 class="mt-4">Reading</h5>
+<div class="card mb-4">
+  <a href="https://micro.blog/books/{{ .isbn }}">
+      <div class="card-body">
+        <p class="card-text mb-1">{{ .title }}</p>
+        <p class="card-text"><small class="text-body-secondary">{{ .author }}</small></p>
+      </div>
+  </div>
+ </a>
+{{ end }}
+
 {{ if gt (len $list) 0 }}
 <div class="archive_categories mt-4 mb-4">
   <h5>Categories</h5>
