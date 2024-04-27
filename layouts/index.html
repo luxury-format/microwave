@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="d-block d-lg-none">
-  <div class="row my-4">
+  <div class="row">
     <div class="col-12">
       <h6>Listening</h6>
       <div class="container pl-0 card">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12">
+    <div class="col-12 mt-3">
       <h6>Reading</h6>
       <div class="container pl-0 card">
         <div class="album-info">
@@ -28,6 +28,7 @@
     </div>
   </div>
 </div>
+<hr class="my-5">
 <ul class="post-list pl-0">
   {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
   default 25) }}
