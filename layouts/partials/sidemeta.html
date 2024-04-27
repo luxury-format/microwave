@@ -42,7 +42,7 @@
       <div class="carousel-inner">
           {{ range $index, $book := $books }}
               <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
-                  <img src="{{ $book.cover_url }}" class="d-block w-100" alt="{{ $book.title }}">
+                  <!-- <img src="{{ $book.cover_url }}" class="d-block w-100" alt="{{ $book.title }}"> -->
                   <div class="carousel-caption d-none d-md-block">
                       <h5>{{ $book.title }}</h5>
                       <p>{{ $book.author }}</p>
