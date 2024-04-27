@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('last-fm-artist').textContent = artist;
             document.getElementById('last-fm-title').textContent = title;
             document.getElementById('last-fm-art').src = largeImage;
+            const spinnerOverlay = document.getElementById('spinner-overlay');
+            spinnerOverlay.style.display = 'none';
             // document.getElementById('title-load').style.display = 'none';
             // document.getElementById('artist-load').style.display = 'none';
         })
