@@ -254,6 +254,13 @@ blockquote p {
   background-color: rgba(255,255,255,0.6);
 }
 
+@media (prefers-color-scheme: dark) {
+  .card-img-overlay {
+    display: flex;
+    background-color: rgba(50,53,66,0.7);
+  }
+}
+
 .card-img-album-info {
   align-self: center;
 }
