@@ -1,6 +1,6 @@
 {{ with .Site.Params.twitter_username }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://x.com/{{ . }}">
+<a class="icon-link" href="https://x.com/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-x-twitter fa-xl" style="width: 19px;"></i>
 </a>
 {{ end }}
@@ -8,7 +8,7 @@
 
 {{ with .Site.Params.github_username }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://github.com/{{ . }}">
+<a class="icon-link" href="https://github.com/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-github fa-xl"></i>
 </a>
 {{ end }}
@@ -16,7 +16,7 @@
 
 {{ with .Site.Params.instagram_username }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://instagram.com/{{ . }}">
+<a class="icon-link" href="https://instagram.com/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-instagram fa-xl"></i>
 </a>
 {{ end }}
@@ -24,7 +24,7 @@
 
 {{ with .Site.Params.letterboxdUsername }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://letterboxd.com/{{ . }}">
+<a class="icon-link" href="https://letterboxd.com/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-letterboxd fa-lg"></i>
 </a>
 {{ end }}
@@ -32,7 +32,7 @@
 
 {{ with .Site.Params.untappdUsername }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://untappd.com/user/{{ . }}">
+<a class="icon-link" href="https://untappd.com/user/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-untappd fa-xl"></i>
 </a>
 {{ end }}
@@ -40,7 +40,7 @@
 
 {{ with .Site.Params.lastfmUsername }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://lastfm.com/user/{{ . }}">
+<a class="icon-link" href="https://lastfm.com/user/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-lastfm fa-xl"></i>
 </a>
 {{ end }}
@@ -48,7 +48,7 @@
 
 {{ with .Site.Params.blueskyUsername }}
 {{ if ne . "" }}
-<a class="icon-link" href="https://bsky.app/profile/{{ . }}">
+<a class="icon-link" href="https://bsky.app/profile/{{ . }}" target="_blank">
     <i class="fa-brands fa-fw fa-bluesky fa-xl"></i>
 </a>
 {{ end }}

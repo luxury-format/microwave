@@ -3,14 +3,19 @@
 <div class="d-block d-lg-none">
   <div class="row">
     <div class="col">
-      <h6>Listening</h6>
+      {{ with .Site.Params.lastfmUsername }}
+
+      <a href="https://lastfm.com/user/{{ . }}" target="_blank">
+        <h6>Listening <i class="fa-solid fa-square-up-right"></i></h6>
+      </a>
+        
       <div class="pl-0 card">
         <div class="album-info">
           <img src="{{ "img/note.png" | relURL }}" alt="Album Art" class="album-art" id="last-fm-art">
           <div class="spinner-overlay" id="spinner-overlay">
             <div class="spinner"></div>
           </div>
-          <div>
+          <div text-center w-100 pr-2>
             <h6 id="last-fm-title"></h6>
             <p id="last-fm-artist" class="text-muted mb-0"></p>
           </div>
@@ -18,12 +23,14 @@
       </div>
     </div>
     {{ if gt (len $books) 0 }}
-    <div class="col-12 mt-3">
-      <h6>Reading</h6>
+    <div class="col-12 mt-4">
+      <a href="https://micro.blog/books/{{ index $books 0 "isbn" }}" target="_blank">
+        <h6>Reading <i class="fa-solid fa-square-up-right"></i></h6>
+      </a>
       <div class="pl-0 card">
         <div class="album-info">
           <img src="{{ index $books 0 "cover_url" }}" alt="Album Art" class="album-art">
-          <div>
+          <div text-center w-100 pr-2>
             <h6>{{ index $books 0 "title" }}</h6>
             <p class="text-muted mb-0">{{ index $books 0 "author" }}</p>
           </div>
