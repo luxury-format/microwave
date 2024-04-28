@@ -8,6 +8,7 @@
         "lastfmUsername": "",
         "blueskyUsername": "",
         "categoriesOnPosts": true,
-        "categoriesInSidebar": true
+        "categoriesInSidebar": true,
+        "showCurrentlyReading": true
     }
 }

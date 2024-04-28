@@ -24,8 +24,15 @@
     </div>
     {{ end }}
     {{ end }}
+    {{- if .Site.Params.showCurrentlyReading -}}
     {{ if gt (len $books) 0 }}
+    {{ with .Site.Params.lastfmUsername }}
+    {{ if ne . "" }}
     <div class="col-12 mt-4">
+    {{ else }}
+    <div class="col-12">
+    {{ end }}
+    {{ end }}
       <a href="https://micro.blog/books/{{ index $books 0 "isbn" }}" target="_blank">
         <h6>Reading <i class="fa-solid fa-square-up-right"></i></h6>
       </a>
@@ -38,7 +45,8 @@
           </div>
         </div>
       </div>
-    {{ end }}      
+    {{ end }}
+    {{ end }}  
     </div>
   </div>
 </div>
