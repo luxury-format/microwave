@@ -2,7 +2,7 @@
 
 <div class="search_bar">
   <form class="input-group" onsubmit="return false;">
-    <input type="text" class="form-control" name="q" id="input_search" placeholder="Search for something..." onchange="submitSearch(this.value.toLowerCase());" aria-label="search" aria-describedby="button-addon2">
+    <input type="text" class="form-control" name="q" id="input_search" placeholder="Search..." onchange="submitSearch(this.value.toLowerCase());" aria-label="search" aria-describedby="button-addon2">
     <div class="input-group-append">
       <button class="btn btn-primary" type="button" id="button-addon2" onclick="submitSearch(this.value.toLowerCase());">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -16,6 +16,27 @@
 
   </div>
 </div>
+
+{{ with .Site.Params.lastfmUsername }}
+  {{ if ne . "" }}
+  <a href="https://last.fm/user/{{ . }}" target="_blank">
+    <h5>Listening <i class="fa-solid fa-square-up-right"></i></h5>
+  </a>
+    
+  <div class="card mb-4">
+    <div class="album-info">
+      <img src="{{ "img/note.png" | relURL }}" alt="Album Art" class="album-art" id="last-fm-art-side">
+      <div class="spinner-overlay" id="spinner-overlay-side">
+        <div class="spinner"></div>
+      </div>
+      <div class="card-body text-center">
+        <h6 id="last-fm-title-side"></h6>
+        <p id="last-fm-artist-side" class="text-muted mb-0"></p>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+{{ end }}
 
 {{- if .Site.Params.showCurrentlyReading -}}
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
@@ -53,6 +74,7 @@
 {{ end }}
 {{ end }}
 
+{{-if .Site.Params.archivesInSidebar -}}
 {{ $list := (where .Site.Pages "Type" "post") }}
 {{ $years := slice }}
 
@@ -71,3 +93,4 @@
   {{ end }}
   </ul>
 </div>
+{{ end }}

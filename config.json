@@ -9,6 +9,7 @@
         "blueskyUsername": "",
         "categoriesOnPosts": true,
         "categoriesInSidebar": true,
-        "showCurrentlyReading": true
+        "showCurrentlyReading": true,
+        "archivesInSidebar": false
     }
 }
