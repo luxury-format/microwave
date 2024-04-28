@@ -245,7 +245,7 @@ blockquote p {
 }
 
 .card-img {
-  max-height: 9rem;
+  height: 9rem;
   object-fit: cover;
 }
 
