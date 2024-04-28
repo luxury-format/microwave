@@ -51,7 +51,7 @@
   {{ range $paginator.Pages }}
   <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
     {{ if .Params.images }}
-    <div style="max-height: 250px; overflow: hidden;">
+    <div class="post-image" style="max-height: 250px; overflow: hidden;">
       <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
     </div>
     {{ end }}
