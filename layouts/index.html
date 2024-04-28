@@ -2,9 +2,9 @@
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
 <div class="d-block d-lg-none">
   <div class="row">
+    {{ with .Site.Params.lastfmUsername }}
+    {{ if ne . "" }}
     <div class="col">
-      {{ with .Site.Params.lastfmUsername }}
-
       <a href="https://lastfm.com/user/{{ . }}" target="_blank">
         <h6>Listening <i class="fa-solid fa-square-up-right"></i></h6>
       </a>
@@ -22,6 +22,8 @@
         </div>
       </div>
     </div>
+    {{ end }}
+    {{ end }}
     {{ if gt (len $books) 0 }}
     <div class="col-12 mt-4">
       <a href="https://micro.blog/books/{{ index $books 0 "isbn" }}" target="_blank">
