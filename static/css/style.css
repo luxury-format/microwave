@@ -195,11 +195,11 @@ blockquote p {
   height: auto;
   /* margin-right: 10px; */
 }
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .album-art {
     max-width: 70px;
   }
-}
+} */
 
 
 .spinner-overlay {
