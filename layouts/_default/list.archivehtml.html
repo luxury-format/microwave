@@ -10,10 +10,10 @@
         {{ $years = $years | append $year }}
     {{ end }}
   {{ end }}
-  <div class="text-center">
+  <div class="text-center mb-5">
     <h5>
     {{ range $index, $year := sort $years }}
-    {{ $year }}
+    <a href="#{{ $year }}">{{ $year }}</a>
     {{ if not (eq (add $index 1) (len $years)) }} • {{ end }}
     {{ end }}
     </h5>
