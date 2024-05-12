@@ -53,6 +53,8 @@
   {{ range $paginator.Pages }}
   {{ $fullimg := false }}
   {{ $cats := .Params.categories }}
+  {{ $cats }}
+  {{ $fullcats }}
   {{ range $category := $fullcats }}
     {{ if in $category $cats }}
         {{ $fullimg = true }}
