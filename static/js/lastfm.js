@@ -36,9 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
             setContentById('last-fm-title-side', title);
             
             const spinnerOverlay = document.getElementById('spinner-overlay');
-            spinnerOverlay.style.display = 'none';
+            if (spinnerOverlay) {
+                spinnerOverlay.style.display = 'none';
+            }
             const spinnerOverlaySide = document.getElementById('spinner-overlay-side');
-            spinnerOverlaySide.style.display = 'none';
+            if (spinnerOverlaySide) {
+                spinnerOverlaySide.style.display = 'none';
+            }
         })
         .catch(error => console.error('Error:', error))
 });
