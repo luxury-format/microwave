@@ -53,12 +53,10 @@
   {{ range $paginator.Pages }}
   {{ $fullimg := false }}
   {{ $cats := .Params.categories }}
-  {{ $cats }}
-  {{ $fullcats }}
   {{ range $category := $fullcats }}
-    {{ if in $category $cats }}
+    {{ $category }}
+    {{ if in $cats $category }}
         {{ $fullimg = true }}
-        <h5>hi</h5>
     {{ end }}
   {{ end }}
   <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
