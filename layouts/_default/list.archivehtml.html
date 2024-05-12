@@ -1,26 +1,30 @@
-
 {{ define "main" }}
-<h2 class="d-none d-md-block">Archive</h2>
+<h2 class="d-none d-md-bloc text-center">Archive</h2>
 
-{{ $list := (where .Site.Pages "Type" "post") }}
-{{ $currentYear := "" }}
-{{ range $list }}
-  {{ $year := .Date.Format "2006" }}
-  {{ if ne $year $currentYear }}
-    {{ if ne $currentYear "" }}</ul>{{ end }}
-    {{ $currentYear = $year }}
-    <h3 class="mb-1 text-center" id="{{ $year }}">{{ $year }}</h3>
-    <ul class="sessions list-unstyled mb-4">
+{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+{{ range $paginator.Pages }}
+  {{ $currentYear := "" }}
+  {{ range .Pages }}
+    {{ $year := .Date.Format "2006" }}
+    {{ if ne $year $currentYear }}
+      {{ if ne $currentYear "" }}</ul>{{ end }}
+      {{ $currentYear = $year }}
+      <h3 class="mb-1 text-center" id="{{ $year }}">{{ $year }}</h3>
+      <ul class="sessions list-unstyled mb-4">
+    {{ end }}
+    <li class="timeline-line perma">
+      <div class="time">
+        <a href="{{ .Permalink }}" class="u-url">
+          <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </a>
+      </div>
+      <span class="p-summary"></span>
+      <p class="timeline-text">{{ if .Title }}<b>{{.Title}}</b> {{ end }}{{ .Summary | truncate 100 }}</p>
+    </li>
   {{ end }}
-  <li class="timeline-line">
-    <div class="time">
-      <a href="{{ .Permalink }}" class="u-url">
-        <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-      </a>
-    </div>
-    <span class="p-summary"></span>
-    <p class="timeline-text">{{ if .Title }}<b>{{.Title}}</b> {{ end }}{{ .Summary | truncate 100 }}</p>
-  </li>
+  </ul> <!-- Close the last ul if there were any posts -->
 {{ end }}
-</ul> <!-- Close the last ul if there were any posts -->
+
+{{ partial "pagination" . }}
+
 {{ end }}

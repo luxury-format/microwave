@@ -83,7 +83,6 @@ li.timeline-line{
   }
 }
 .time{
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   @include mobile-and-up{
     font-size: .9rem;

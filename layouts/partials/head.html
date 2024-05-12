@@ -48,4 +48,5 @@
   {{ range $filename := .Site.Params.plugins_html }}
     {{ partial $filename $ }}
   {{ end }}
+  {{ partial "microblog_head.html" . }}
 </head>
