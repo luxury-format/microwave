@@ -54,7 +54,6 @@
   {{ $fullimg := false }}
   {{ $cats := .Params.categories }}
   {{ range $category := $fullcats }}
-    {{ $category }}
     {{ if in $cats $category }}
         {{ $fullimg = true }}
     {{ end }}
