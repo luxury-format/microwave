@@ -30,6 +30,14 @@
     margin-right: 0.5rem; 
 }
 
+@media (min-width: 1200px) {
+  .post-list {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* timeline */
 
 @mixin tablet-and-up {
