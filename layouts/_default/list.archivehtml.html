@@ -1,7 +1,7 @@
 {{ define "main" }}
 <h2 class="d-none d-md-bloc text-center">Archive</h2>
 
-{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+{{ $paginator := .Paginate (where .Pages "Type" "post") }}
 {{ range $paginator.Pages }}
   {{ $currentYear := "" }}
   {{ range .Pages }}
