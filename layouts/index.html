@@ -53,7 +53,7 @@
   {{ range $paginator.Pages }}
   {{ $fullimg := false }}
   <h5>{{ range $fullcats}}{{ . }}{{ end }}</h5>
-  
+  {{ .Params.categories }}
   <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
     {{ if .Params.images }}
     <div class="post-image" {{ if not $fullimg }} style="max-height: 250px; overflow: hidden;" {{ end }}>
