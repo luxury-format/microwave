@@ -12,12 +12,28 @@ document.addEventListener('DOMContentLoaded', function () {
             const title = track.name;
             const largeImage = track.image.find(img => img.size === 'large')['#text'];
             
-            document.getElementById('last-fm-art').src = largeImage;
-            document.getElementById('last-fm-art-side').src = largeImage;
-            document.getElementById('last-fm-artist').textContent = artist;
-            document.getElementById('last-fm-artist-side').textContent = artist;
-            document.getElementById('last-fm-title').textContent = title;
-            document.getElementById('last-fm-title-side').textContent = title;
+            // set text content with an existence check
+            function setContentById(id, content) {
+                var element = document.getElementById(id);
+                if (element) {
+                    element.textContent = content;
+                }
+            }
+
+            // same for images
+            function setImageSrcById(id, src) {
+                var element = document.getElementById(id);
+                if (element) {
+                    element.src = src;
+                }
+            }
+            
+            setImageSrcById('last-fm-art', largeImage);
+            setImageSrcById('last-fm-art-side', largeImage);
+            setContentById('last-fm-artist', artist);
+            setContentById('last-fm-artist-side', artist);
+            setContentById('last-fm-title', title);
+            setContentById('last-fm-title-side', title);
             
             const spinnerOverlay = document.getElementById('spinner-overlay');
             spinnerOverlay.style.display = 'none';

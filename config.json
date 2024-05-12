@@ -10,6 +10,8 @@
         "categoriesOnPosts": true,
         "categoriesInSidebar": true,
         "showCurrentlyReading": true,
-        "archivesInSidebar": false
+        "archivesInSidebar": false,
+        "truncatePostsOnIndex": true,
+        "truncatePostsCharLimit": 250
     }
 }

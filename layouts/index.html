@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
+{{ $trunc := .Site.Params.truncatePostsCharLimit }}
 <div class="d-block d-lg-none">
   <div class="row">
     {{ with .Site.Params.lastfmUsername }}
@@ -71,7 +72,11 @@
       <h5 class="card-title">{{ .Title }}</h5>
       {{ end }}
       <div class="post-content">
-        {{ .Content | truncate 100 }}
+        {{- if .Site.Params.truncatePostsOnIndex -}}
+        {{ .Content | truncate $trunc }}
+        {{ else }}
+        {{ .Content }}
+        {{ end }}
       </div>
       <div>
         <a href="{{ .Permalink }}" class="u-url">
