@@ -11,10 +11,12 @@
     {{ end }}
   {{ end }}
   <div class="text-center">
+    <h5>
     {{ range $index, $year := sort $years }}
-    <h5>{{ $year }}</h5>
+    {{ $year }}
     {{ if not (eq (add $index 1) (len $years)) }} • {{ end }}
-  {{ end }}
+    {{ end }}
+    </h5>
   </div>
   {{ $currentYear := "" }}
   {{ range $list }}
