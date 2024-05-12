@@ -51,8 +51,8 @@
   {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
   default 25) }}
   {{ range $paginator.Pages }}
-  {{ range $index, $category := $fullcats }}
   {{ $fullimg := false }}
+  {{ range $index, $category := $fullcats }}
     {{ if in .Params.categories $category }}
       {{ $fullimg = true}}
     {{ end }}
