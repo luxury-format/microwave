@@ -3,6 +3,19 @@
 <h2 class="d-none d-md-block text-center">Archive</h2>
 <div class="perma">
   {{ $list := (where .Site.Pages "Type" "post") }}
+  {{ $years := slice }}
+  {{ range $list }}
+    {{ $year := .Date.Format "2006" }}
+    {{ if not (in $years $year) }}
+        {{ $years = $years | append $year }}
+    {{ end }}
+  {{ end }}
+  <div class="text-center">
+    {{ range $index, $year := sort $years }}
+    <h5>{{ $year }}</h5>
+    {{ if not (eq (add $index 1) (len $years)) }} • {{ end }}
+  {{ end }}
+  </div>
   {{ $currentYear := "" }}
   {{ range $list }}
     {{ $year := .Date.Format "2006" }}
