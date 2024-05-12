@@ -52,7 +52,7 @@
   default 25) }}
   {{ range $paginator.Pages }}
   {{ $fullimg := false }}
-  <h5>{{ range $fullcats}}{{ . }}{{ end }}</h5>
+  {{ $fullcats }}
   {{ .Params.categories }}
   <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
     {{ if .Params.images }}
