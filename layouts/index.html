@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
 {{ $trunc := .Site.Params.truncatePostsCharLimit }}
+{{ $fullcats := .Site.Params.categoriesFullImgsHome }}
 <div class="d-block d-lg-none">
   <div class="row">
     {{ with .Site.Params.lastfmUsername }}
@@ -50,9 +51,15 @@
   {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
   default 25) }}
   {{ range $paginator.Pages }}
+  {{ range $index, $category := $fullcats }}
+  {{ $fullimg := false }}
+    {{ if in .Params.categories $category }}
+      {{ $fullimg = true}}
+    {{ end }}
+  {{ end }}
   <div class="card {{ range .Params.categories }}{{ . }}{{ end }} mb-5">
     {{ if .Params.images }}
-    <div class="post-image" style="max-height: 250px; overflow: hidden;">
+    <div class="post-image" {{ if not $fullimg }} style="max-height: 250px; overflow: hidden;" {{ end }}>
       <img src="{{ index .Params.images 0 }}" class="card-img-top w-100" alt="...">
     </div>
     {{ end }}

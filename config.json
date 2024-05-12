@@ -12,6 +12,9 @@
         "showCurrentlyReading": true,
         "archivesInSidebar": false,
         "truncatePostsOnIndex": true,
-        "truncatePostsCharLimit": 250
+        "truncatePostsCharLimit": 250,
+        "categoriesFullImgsHome": [
+            "Blog"
+        ]
     }
 }
