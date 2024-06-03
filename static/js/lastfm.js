@@ -28,8 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             
-            setImageSrcById('last-fm-art', largeImage);
-            setImageSrcById('last-fm-art-side', largeImage);
+            if (largeImage !== "") {
+                setImageSrcById('last-fm-art', largeImage);
+                setImageSrcById('last-fm-art-side', largeImage);
+            }
             setContentById('last-fm-artist', artist);
             setContentById('last-fm-artist-side', artist);
             setContentById('last-fm-title', title);
