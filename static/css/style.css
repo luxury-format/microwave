@@ -216,6 +216,34 @@ blockquote p {
   width: 100%;
 }
 
+.microblog_reply_button {
+  margin-bottom: 0 !important;
+}
+
+.microblog_reply_button input {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  background-color: #3b3b3b;
+  border-color: #3b3b3b;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.microblog_reply_button input:hover {
+  color: #fff;
+  background-color: #282828;
+  border-color: #222222;
+}
+
 .carousel-item {
   height: 10rem;
   background-color: grey;
