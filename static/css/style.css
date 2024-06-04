@@ -181,9 +181,15 @@ blockquote p {
   }
 }
 
-.microblog_post:not(:first-child) {
+/* .microblog_post:not(:first-child) {
   margin-top: 1rem;
   border-top: 1px solid rgb(0,0,0,0.1);
+  padding-top: 1rem;
+} */
+
+.microblog_conversation > *:not(:first-child) {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 1rem;
 }
 
@@ -204,6 +210,10 @@ blockquote p {
 
 .microblog_text p {
   margin-bottom: 0 !important;
+}
+
+.microblog_reply_textarea textarea {
+  width: 100%;
 }
 
 .carousel-item {
