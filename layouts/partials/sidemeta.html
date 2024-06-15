@@ -40,6 +40,7 @@
 
 {{- if .Site.Params.showCurrentlyReading -}}
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
+{{ index $books 0 "cover_url" }}
 
 {{ if gt (len $books) 0 }}
   <h5 class="mt-4">
@@ -48,10 +49,12 @@
     </a>
   </h5>
     <div class="card mb-4">
-      <div class="card-body text-center">
-          <p class="card-text mb-1">{{  index $books 0 "title" }}</p>
-          <p class="card-text"><small class="text-body-secondary">{{ index $books 0 "author" }}</small></p>
-        </a>
+      <img src="https://micro.blog/books/{{ index $books 0 "isbn" }}" alt="Book Art" class="card-img">
+      <div class="card-img-overlay">
+        <div class="text-center card-img-album-info">
+          <h6 class="">{{  index $books 0 "title" }}</h6>
+          <p class="mb-0">{{ index $books 0 "author" }}</p>
+        </div>
       </div>
     </div>
 {{ end }}
