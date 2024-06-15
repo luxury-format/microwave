@@ -257,6 +257,13 @@ blockquote p {
   height: auto;
   /* margin-right: 10px; */
 }
+.book-art {
+  max-width: 100px;
+  min-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: top;
+}
 /* @media (max-width: 576px) {
   .album-art {
     max-width: 70px;
