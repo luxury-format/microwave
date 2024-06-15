@@ -3,8 +3,16 @@
   <div class="spinner-border text-primary" role="status"></div>
 </div>
 
+{{- $pagesWithPhotos := where .Site.Pages "Params.photos" "!=" nil -}}
+{{- $filteredPages := slice -}}
+{{- range $pagesWithPhotos -}}
+  {{- if not (or (in .Params.categories "Letterboxd") (in .Params.categories "Movies"))  -}}
+    {{- $filteredPages = $filteredPages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $list := $filteredPages -}}
+
 <div class="grid" id="photo-grid" style="display: none;">
-  {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
 	{{- $len := (len $list) -}}
 	{{ range $index, $value := $list }}
     <div class="grid-item">
