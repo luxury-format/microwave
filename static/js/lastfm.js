@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://api.wson.me/api/lastfm/recent?limit=1', {
+    fetch(`https://api.wson.me/api/lastfm/recent?limit=1&user=${lastfmUsername}`, {
         headers: {
             'X-API-KEY': 'ke3rwwTJgpvBqGeo6hOPltQ0Gz0KhrUwyvI0tSYFFXSAb3l1C1TtUME861mNcv5bVkLZyOAfcnNi0ITGrm043OVxCe3IEuw4RkmEEPpwOhwi1v3OiPfqDK7hu8GzWGRm'
         }
