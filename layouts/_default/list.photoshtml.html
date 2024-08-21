@@ -1,15 +1,25 @@
 {{ define "main" }}
+{{ $photoignore := .Site.Params.categoriesIgnorePhotosPage }}
+
 <div class="d-flex justify-content-center" id="photo-spinner">
   <div class="spinner-border text-primary" role="status"></div>
 </div>
 
 {{- $pagesWithPhotos := where .Site.Pages "Params.photos" "!=" nil -}}
 {{- $filteredPages := slice -}}
-{{- range $pagesWithPhotos -}}
-  {{- if not (or (in .Params.categories "Letterboxd") (in .Params.categories "Movies"))  -}}
-    {{- $filteredPages = $filteredPages | append . -}}
+
+{{- range $page := $pagesWithPhotos -}}
+  {{- $ignore := false -}}
+  {{- range $category := $photoignore -}}
+    {{- if in $page.Params.categories $category -}}
+      {{- $ignore = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $ignore -}}
+    {{- $filteredPages = $filteredPages | append $page -}}
   {{- end -}}
 {{- end -}}
+
 {{- $list := $filteredPages -}}
 
 <div class="grid" id="photo-grid" style="display: none;">

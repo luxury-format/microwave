@@ -15,6 +15,7 @@
         "truncatePostsCharLimit": 250,
         "categoriesFullImgsHome": [
             "Blog"
-        ]
+        ],
+        "categoriesIgnorePhotosPage":[]
     }
 }
