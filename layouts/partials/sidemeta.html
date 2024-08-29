@@ -19,8 +19,8 @@
 
 {{ with .Site.Params.lastfmUsername }}
   {{ if ne . "" }}
-  <a href="https://last.fm/user/{{ . }}" target="_blank">
-    <h5 class="mt-4">Listening <i class="fa-solid fa-square-up-right"></i></h5>
+  <a class="no-under" href="https://last.fm/user/{{ . }}" target="_blank">
+    <h5 class="mt-4">Listening <i class="fa-solid fa-xs fa-square-up-right"></i></h5>
   </a>
     
   <div class="card mb-4">
@@ -43,8 +43,8 @@
 
 {{ if gt (len $books) 0 }}
   <h5 class="mt-4">
-    <a href="https://micro.blog/books/{{ index $books 0 "isbn" }}">
-      Reading <i class="fa-solid fa-square-up-right"></i>
+    <a class="no-under"  href="https://micro.blog/books/{{ index $books 0 "isbn" }}">
+      Reading <i class="fa-solid fa-xs fa-square-up-right"></i>
     </a>
   </h5>
     <div class="card mb-4">

@@ -7,8 +7,8 @@
     {{ with .Site.Params.lastfmUsername }}
     {{ if ne . "" }}
     <div class="col">
-      <a href="https://last.fm/user/{{ . }}" target="_blank">
-        <h6>Listening <i class="fa-solid fa-square-up-right"></i></h6>
+      <a class="no-under" href="https://last.fm/user/{{ . }}" target="_blank">
+        <h6>Listening <i class="fa-solid fa-xs fa-square-up-right"></i></h6>
       </a>
         
       <div class="pl-0 card">
@@ -29,8 +29,8 @@
     {{- if .Site.Params.showCurrentlyReading -}}
     {{ if gt (len $books) 0 }}
     <div class="col-12 {{ with .Site.Params.lastfmUsername }}{{ if ne . "" }}mt-4{{ end }}{{ end }}">
-      <a href="https://micro.blog/books/{{ index $books 0 "isbn" }}" target="_blank">
-        <h6>Reading <i class="fa-solid fa-square-up-right"></i></h6>
+      <a class="no-under" href="https://micro.blog/books/{{ index $books 0 "isbn" }}" target="_blank">
+        <h6>Reading <i class="fa-solid fa-xs fa-square-up-right"></i></h6>
       </a>
       <div class="pl-0 card">
         <div class="album-info">
@@ -90,7 +90,6 @@
         <a href="{{ .Permalink }}" class="u-url">
           <span class="post-meta">
             <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-            <i class="fa-solid fa-arrow-right ml-2"></i>
           </span>
         </a>
       </div>

@@ -13,6 +13,8 @@
         "archivesInSidebar": false,
         "truncatePostsOnIndex": true,
         "truncatePostsCharLimit": 250,
+        "enableMarquee": true,
+        "marqueeContent": "I'm doing a triathlon for charity! <a href=\"https://www.justgiving.com/page/angeandjoshtrythetri?utm_source=IG\">Donate here</a>",
         "categoriesFullImgsHome": [
             "Blog"
         ],
