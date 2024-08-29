@@ -11,12 +11,12 @@
   {{ end }}
   <div class="container-fluid-lg container-xl">
     <div class="row">
-      <div class="d-none d-md-block col-md-3 col-xl-2 sticky-sidebar mt-5" id="sidebar">
+      <div class="d-none d-md-block col-md-3 col-xl-2 sticky-sidebar {{ if .Site.Params.enableMarquee }}pt-3{{ else }}pt-5{{ end }}" id="sidebar">
         <div class="sticky-sidebar">
           {{ partial "sidebar.html" . }}
         </div>
       </div>
-      <div class="col pt-5" id="content">
+      <div class="col {{ if .Site.Params.enableMarquee }}pt-3{{ else }}pt-5{{ end }}" id="content">
         <div class="d-block d-md-none mb-4">
           {{ partial "mobile-nav.html" . }}
         </div>
