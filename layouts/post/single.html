@@ -23,7 +23,7 @@
         <i class="fa-solid fa-tag"></i>
         {{ $baseURL := .Site.BaseURL }}
         {{ range .Params.Categories }}
-        <a href="{{ $baseURL }}/categories/{{ . | urlize }}" class="btn btn-primary btn-sm btn-xs">{{ . }}</a>
+        <a href="{{ $baseURL }}/categories/{{ . | urlize }}" class="btn btn-primary btn-sm btn-xs no-under">{{ . }}</a>
         {{ end }}
       </span>
     </div>

@@ -37,7 +37,7 @@ function runSearch(q) {
             var text_lower = item.content_text.toLowerCase();
             if (title_lower.includes(q) || text_lower.includes(q)) {
                 var link_node = document.createElement("a");
-                link_node.className = "list-group-item list-group-item-action";
+                link_node.className = "list-group-item list-group-item-action search-result";
                 link_node.href = item.url;
                 
                 var date_s = new Date(Date.parse(item.date_published)).toISOString().substr(0, 10);

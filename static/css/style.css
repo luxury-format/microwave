@@ -3,14 +3,24 @@
   margin-right: 0.5rem;
 }
 
+.home-active {
+  font-weight: bold !important;
+}
+
 .sticky-sidebar {
   position: sticky;
   top: 3rem;
   z-index: 1000;
 }
 
-.nav-link.active {
-  text-decoration: underline;
+.bg-marquee {
+  background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-marquee {
+    background-color: rgb(50, 53, 66);
+  }
 }
 
 .post-content img {
@@ -39,8 +49,30 @@
   }
 }
 
+
+
 .btn-xs {
   padding: 0.05rem 0.35rem !important;
+}
+
+/* links */
+.no-under {
+  text-decoration: none;
+  text-decoration-line: none;
+  text-underline-offset: unset;
+}
+
+.no-under:hover {
+  text-decoration: none;
+  text-decoration-line: none;
+  text-underline-offset: unset;
+}
+
+/* search */
+.search-result:hover {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 0.3rem;
 }
 
 /* timeline */
