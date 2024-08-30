@@ -422,7 +422,10 @@ kbd {
 pre {
   display: block;
   font-size: 87.5%;
-  color: #adb5bd; }
+  color: #adb5bd; 
+  padding: 0.5rem;
+  border: 1px solid rgba(59, 59, 59, 0.125);
+  background-color:#232630;}
   pre code {
     font-size: inherit;
     color: inherit;
