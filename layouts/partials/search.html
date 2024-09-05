@@ -1,0 +1,18 @@
+<div class="search_bar" data-search-id="{{ .ID }}">
+  <form class="input-group" onsubmit="return false;">
+      <input type="text" class="form-control" name="q" id="{{ .ID }}_input_search" placeholder="Search..."
+          onchange="submitSearch('{{ .ID }}', this.value.toLowerCase());" aria-label="search" aria-describedby="button-addon2">
+      <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="button-addon2" onclick="submitSearch('{{ .ID }}', this.value.toLowerCase());">
+              <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+      </div>
+  </form>
+</div>
+
+<div id="{{ .ID }}_parent_results" class="position-absolute start-0"
+  style="display: none; background-color: white; border: 1px solid #ced4da; border-top: none; border-radius: 0 0 0.5rem 0.5rem; width: 100%; z-index:1000;">
+  <div class="list-group list-group-flush" id="{{ .ID }}_list_results">
+
+  </div>
+</div>

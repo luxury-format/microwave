@@ -1,15 +1,6 @@
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
-<div class="search_bar">
-  <form class="input-group" onsubmit="return false;">
-    <input type="text" class="form-control" name="q" id="input_search" placeholder="Search..." onchange="submitSearch(this.value.toLowerCase());" aria-label="search" aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="button" id="button-addon2" onclick="submitSearch(this.value.toLowerCase());">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-  </form>
-</div>
+{{ partial "search.html" (dict "ID" "sidemeta") }}
 
 <div id="parent_results" class="position-absolute start-0" style="display: none; background-color: white; border: 1px solid #ced4da; border-top: none; border-radius: 0 0 0.5rem 0.5rem; width: 100%; z-index:1000;">
   <div class="list-group list-group-flush" id="list_results">
