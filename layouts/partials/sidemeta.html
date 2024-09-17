@@ -11,7 +11,7 @@
 {{ with .Site.Params.lastfmUsername }}
   {{ if ne . "" }}
   <a class="no-under" href="https://last.fm/user/{{ . }}" target="_blank">
-    <h5 class="mt-4">Listening <i class="fa-solid fa-xs fa-square-up-right"></i></h5>
+    <h1 class="mt-4">Listening <i class="fa-solid fa-xs fa-square-up-right"></i></h1>
   </a>
     
   <div class="card mb-4">
@@ -33,11 +33,11 @@
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
 
 {{ if gt (len $books) 0 }}
-  <h5 class="mt-4">
+  <h1 class="mt-4">
     <a class="no-under"  href="https://micro.blog/books/{{ index $books 0 "isbn" }}">
       Reading <i class="fa-solid fa-xs fa-square-up-right"></i>
     </a>
-  </h5>
+  </h1>
     <div class="card mb-4">
       <img src="{{ index $books 0 "cover_url" }}" alt="Book Art" class="card-img">
       <div class="card-img-overlay">
@@ -53,14 +53,14 @@
 {{- if .Site.Params.categoriesInSidebar -}}
 {{ if gt (len $list) 0 }}
 <div class="archive_categories mt-4 mb-4">
-  <h5>Categories</h5>
+  <h1>Categories</h1>
   <div class="mb-2 d-flex flex-wrap">
     {{ range $list }}
-    <h5>
+    <h1>
       <a href="{{ .Permalink }}">
         <span class="badge badge-primary">{{ .Title }}</span>
       </a>
-    </h5>
+    </h1>
     {{ end }}
   </div>
 </div>
@@ -79,7 +79,7 @@
 {{ end }}
 
 <div class="archive_years mb-4">
-  <h5>Archives</h5>
+  <h1>Archives</h1>
   <ul class="list-group">
   {{ range $index, $year := sort $years }}
     <a href="/archive#{{ $year }}" class="list-group-item list-group-item-action">{{ $year }}</a>
