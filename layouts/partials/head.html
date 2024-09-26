@@ -7,7 +7,7 @@
     <!-- meta -->
     <meta itemprop="name" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
     <meta itemprop="description" content="{{ .Site.Params.metaDescription }}" />
-    <meta itemprop="image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
+    <meta itemprop="image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
