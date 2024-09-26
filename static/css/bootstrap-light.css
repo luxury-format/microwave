@@ -125,7 +125,9 @@ sup {
 
 a {
   color: #3b3b3b;
-  text-decoration: none;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 0.3rem;
   background-color: transparent; }
   a:hover {
     color: #151515;
