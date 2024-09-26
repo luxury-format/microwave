@@ -1,5 +1,6 @@
 {
     "params": {
+        "metaDescription": "A blog running on Micro.blog",
         "showTagline": true,
         "paginateReplies": true,
         "tagline": "Modern art makes me want to rock out",

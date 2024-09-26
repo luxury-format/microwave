@@ -1,12 +1,25 @@
 <head>
     <meta name="viewport" content="width=device-width", initial-scale="1">
-    <meta name="description" content="{{ .Summary }}">
+    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.tagline }}{{ else }}{{ .Summary }}{{ end }}">
     <meta name="apple-mobile-web-app-status-bar-style" content="red">
     <meta name="theme-color" content="#3B3B3B" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#323542" media="(prefers-color-scheme: dark)">
+    <!-- meta -->
+    <meta itemprop="name" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
+    <meta itemprop="description" content="{{ .Site.Params.metaDescription }}" />
+    <meta itemprop="image" content="https://micro.blog/{{ .Site.Author.Username }}/podcast.png" />
+    <meta property="og:url" content="{{ absURL }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
+    <meta property="og:description" content="{{ .Site.Params.metaDescription }}" />
+    <meta property="og:image" content="https://micro.blog/{{ .Site.Author.Username }}/podcast.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
+    <meta name="twitter:description" content="{{ .Site.Params.metaDescription }}" />
+    <meta name="twitter:image" content="https://micro.blog/{{ .Site.Author.Username }}/podcast.png" />
     <title>
         {{ block "title" . }}
-        {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} - {{ .Title }}{{ end }}
+        {{ if .IsHome }}{{ .Site.Title }}{{ else if .Title }}{{ .Site.Title }} - {{ .Title }}{{ else }}{{ .Site.Title }} - {{ .Summary }}{{ end }}
         {{ end }}
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
