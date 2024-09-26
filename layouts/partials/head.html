@@ -26,6 +26,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://micro.blog/{{ .Site.Author.username }}/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://micro.blog/{{ .Site.Author.username }}/podcast.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Author.avatar }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://micro.blog/{{ .Site.Author.username }}/favicon.png">
     {{ if .RSSLink -}}
       <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
       <link href="{{ "podcast.xml" | absURL }}" rel="alternate" type="application/rss+xml" title="Podcast" />
