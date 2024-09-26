@@ -58,13 +58,13 @@
 /* links */
 .no-under {
   text-decoration: none;
-  text-decoration-line: none;
+  text-decoration-line: none !important;
   text-underline-offset: unset;
 }
 
 .no-under:hover {
   text-decoration: none;
-  text-decoration-line: none;
+  text-decoration-line: none !important;
   text-underline-offset: unset;
 }
 
@@ -76,7 +76,7 @@
 }
 
 a {
-  text-decoration-line: underline !important;
+  text-decoration-line: underline ;
   text-decoration-style: wavy !important;
   text-underline-offset: 0.3rem !important; 
 }
