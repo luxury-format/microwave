@@ -19,7 +19,7 @@
     <meta name="twitter:image" content="https://micro.blog/{{ .Site.Author.username }}/podcast.png" />
     <title>
         {{ block "title" . }}
-        {{ if .IsHome }}{{ .Site.Title }}{{ else if .Title }}{{ .Site.Title }} - {{ .Title }}{{ else }}{{ .Site.Title }} - {{ .Summary }}{{ end }}
+        {{ if .IsHome }}{{ .Site.Title }}{{ else if .Title }}{{ .Site.Title }} - {{ .Title }}{{ else }}{{ .Site.Title }} - {{ .Summary | truncate 50 }}{{ end }}
         {{ end }}
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
