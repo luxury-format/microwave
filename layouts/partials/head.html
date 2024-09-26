@@ -7,16 +7,16 @@
     <!-- meta -->
     <meta itemprop="name" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
     <meta itemprop="description" content="{{ .Site.Params.metaDescription }}" />
-    <meta itemprop="image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
+    <meta itemprop="image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ index .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
     <meta property="og:description" content="{{ .Site.Params.metaDescription }}" />
-    <meta property="og:image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
+    <meta property="og:image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ index .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ .Site.Title }}{{ if .Site.Params.tagline }} — {{ .Site.Params.tagline }}{{ end }}" />
     <meta name="twitter:description" content="{{ .Site.Params.metaDescription }}" />
-    <meta name="twitter:image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
+    <meta name="twitter:image" content="{{ if not .IsHome }}{{ if .Params.images }}{{ index .Params.images 0 }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}{{ else }}https://micro.blog/{{ .Site.Author.username }}/podcast.png{{ end }}" />
     <title>
         {{ block "title" . }}
         {{ if .IsHome }}{{ .Site.Title }}{{ else if .Title }}{{ .Site.Title }} - {{ .Title }}{{ else }}{{ .Site.Title }} - {{ .Summary | truncate 50 }}{{ end }}
