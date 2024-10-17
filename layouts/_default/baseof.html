@@ -56,14 +56,21 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  {{ with .Site.Params.lastfmUsername }}
-  {{ if ne . "" }}
-    <script>
-      const lastfmUsername = "{{ . }}";
-    </script>
-    <script src="{{ "js/lastfm.js" | relURL }}"></script>
-  {{ end }}
-  {{ end }}
+    {{ with .Site.Params.lastfmUsername }}
+    {{ if ne . "" }}
+      <script>
+        const lastfmUsername = "{{ . }}";
+      </script>
+      {{ with $.Site.Params.apiKey }}
+      {{ if ne . "" }}
+        <script>
+          const lastfmApiKey = "{{ . }}";
+        </script>
+        <script src="{{ "js/lastfm.js" | relURL }}"></script>
+        {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ end }}
   <script src="{{ "js/search.js" | relURL }}"></script>
   <script src="{{ "js/archive.js" | relURL }}"></script>
   <script src="{{ "js/hamburger.js" | relURL }}"></script>
