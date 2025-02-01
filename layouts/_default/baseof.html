@@ -35,11 +35,9 @@
         </div>
         {{ block "main" . }}{{ end }}
       </div>
-      <div class="col-3 d-none d-lg-block sticky-sidebar" id="meta">
+      <div class="col-3 d-none d-xl-block sticky-sidebar {{ if .Site.Params.enableMarquee }}pt-3{{ else }}pt-5{{ end }}" id="meta">
         <div class="sticky-sidebar">
-          <p class="font-monospace">
-            {{ partial "sidemeta.html" . }}
-          </p>
+          {{ partial "sidemeta.html" . }}
         </div>
       </div>
     </div>

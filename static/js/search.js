@@ -89,6 +89,8 @@ document.body.addEventListener('click', function(event) {
     var searchResults = document.getElementById('sidemeta_parent_results');
     var mobileInputSearch = document.getElementById('mobile_input_search');
     var mobileSearchResults = document.getElementById('mobile_parent_results');
+    var midInputSearch = document.getElementById('mid_input_search');
+    var midSearchResults = document.getElementById('mid_parent_results');
     if (!searchResults.contains(event.target)) {
         searchResults.style.display = 'none';
         inputSearch.value = '';
@@ -99,20 +101,32 @@ document.body.addEventListener('click', function(event) {
         mobileInputSearch.value = '';
         clearQuery();
     }
+    if (!midSearchResults.contains(event.target)) {
+        midSearchResults.style.display = 'none';
+        midInputSearch.value = '';
+        clearQuery();
+    }
 });
 
-document.body.addEventListener('keydown', function(event) {
-    var inputSearch = document.getElementById('sidemeta_input_search');
-    var searchResults = document.getElementById('sidemeta_parent_results');
-    var mobileInputSearch = document.getElementById('mobile_input_search');
-    var mobileSearchResults = document.getElementById('mobile_parent_results');
-    if (event.key === 'Escape') {
-        searchResults.style.display = 'none';
-        mobileInputSearch.value = '';
-        searchResults.style.display = 'none';
-        mobileSearchResults.value = '';
-        clearQuery()
+function setupEscapeListener(inputId, resultsId) {
+    var input = document.getElementById(inputId);
+    var results = document.getElementById(resultsId);
+
+    if (input && results) {
+        input.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                results.style.display = "none";
+                input.value = "";
+                clearQuery();
+            }
+        });
     }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    setupEscapeListener("sidemeta_input_search", "sidemeta_parent_results");
+    setupEscapeListener("mobile_input_search", "mobile_parent_results");
+    setupEscapeListener("mid_input_search", "mid_parent_results");
 });
 
 document.addEventListener("DOMContentLoaded", function() {

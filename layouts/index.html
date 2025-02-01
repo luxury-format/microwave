@@ -2,7 +2,10 @@
 {{ $books := .Site.Data.bookshelves.currentlyreading }}
 {{ $trunc := .Site.Params.truncatePostsCharLimit }}
 {{ $fullcats := .Site.Params.categoriesFullImgsHome }}
-<div class="d-block d-lg-none">
+<div class="d-block d-xl-none">
+  <div class="mb-4 d-none d-md-block d-xl-none">
+    {{ partial "search.html" (dict "ID" "mid") }}
+  </div>
   <div class="row">
     {{ with .Site.Params.lastfmUsername }}
     {{ if ne . "" }}
@@ -28,7 +31,7 @@
     {{ end }}
     {{- if .Site.Params.showCurrentlyReading -}}
     {{ if gt (len $books) 0 }}
-    <div class="col-12 {{ with .Site.Params.lastfmUsername }}{{ if ne . "" }}mt-4{{ end }}{{ end }}">
+    <div class="col-md-12 {{ with .Site.Params.lastfmUsername }}{{ if ne . "" }}col-lg-6 mt-md-4 mt-lg-0{{ end }}{{ end }}">
       <a class="no-under" href="https://micro.blog/books/{{ index $books 0 "isbn" }}" target="_blank">
         <h2>Reading <i class="fa-solid fa-xs fa-square-up-right"></i></h2>
       </a>
@@ -46,7 +49,7 @@
     {{ end }}  
   </div>
 </div>
-<hr class="d-block d-lg-none my-5">
+<hr class="d-block d-xl-none my-5">
 <ul class="post-list pl-0">
   {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" |
   default 25) }}
