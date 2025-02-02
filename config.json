@@ -12,6 +12,7 @@
         "categoriesOnPosts": true,
         "categoriesInSidebar": true,
         "showCurrentlyReading": true,
+        "showReadingTime": false,
         "archivesInSidebar": false,
         "truncatePostsOnIndex": true,
         "truncatePostsCharLimit": 250,

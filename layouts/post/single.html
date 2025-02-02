@@ -9,6 +9,7 @@
         <i class="fa-regular fa-calendar"></i>
         <time class="dt-published" datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
       </p>
+      {{ if .Site.Params.showReadingTime }}
       <p class="reading-time mb-1">
         <i class="fa-solid fa-stopwatch"></i>
         {{ $readingTime := .ReadingTime }}
@@ -19,6 +20,7 @@
             {{ $readingTime }} minutes to read
         {{ end }}
       </p>
+      {{ end }}
       <span class="post-tags">
         <i class="fa-solid fa-tag"></i>
         {{ $baseURL := .Site.BaseURL }}
